@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="{{ '/assets/img/logo-240.webp' | relative_url }}" alt="" width="30" height="30">systems<span class="num">42</span></div>
+      <p>Where AI meets engineering discipline. Built on req42 and arc42.</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <ul>{% for item in site.data.nav %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </div>
+    <div>
+      <h4>42 family</h4>
+      <ul>
+        {% for m in site.data.family %}{% unless m.here %}<li><a href="{{ m.url }}">{{ m.host }}</a></li>{% endunless %}{% endfor %}
+        <li><a href="https://quality.arc42.org">quality.arc42.org</a></li>
+        <li><a href="{{ '/family/' | relative_url }}">The 42 family</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="{{ '/imprint/' | relative_url }}">Imprint</a></li>
+        <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+        <li><a href="https://github.com/systems42-org/systems42.org-site">Source on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap"><div class="copy">© {{ site.time | date: "%Y" }} Peter Hruschka, Peter Gerstbach, Gernot Starke. Content CC BY-SA 4.0 unless stated otherwise.</div></div>
+</footer>

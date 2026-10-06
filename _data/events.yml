@@ -1,0 +1,12 @@
+# Seminars and events shown on /training/ and referenced from the home page.
+- id: seminar-2027-01
+  title: Agentic engineering with systems42
+  day_range: 26–28
+  month: January 2027
+  date_iso: 2027-01-26
+  short: First seminar, Jan 26–28, 2027
+  description: >-
+    The first public seminar. Three days of working through the cycle with your own
+    examples: spec, loops, guardrails, and what to do when the AI asks back. In German or English.
+  register_url: /training/#register
+  agenda_url: /training/#agenda

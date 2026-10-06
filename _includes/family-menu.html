@@ -1,0 +1,11 @@
+<div class="family-pop" id="family-pop" hidden>
+  <div class="ttl">Member of the 42 family</div>
+  <ul>
+    {% for m in site.data.family %}
+    <li>
+      <a href="{% if m.url contains '://' %}{{ m.url }}{% else %}{{ m.url | relative_url }}{% endif %}"><span class="dot dot-{{ m.color }}"></span>{{ m.name }}<small>{{ m.host }}</small>{% if m.here %}<span class="tag tag-here">You are here</span>{% endif %}</a>
+      <p>{{ m.short }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

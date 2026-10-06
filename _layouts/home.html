@@ -1,0 +1,96 @@
+---
+layout: default
+---
+{% assign h = site.data.home %}
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>{{ h.hero.headline }}</h1>
+      <p>{{ h.hero.sub }}</p>
+      <div class="cta">
+        <a class="btn btn-mint" href="{{ h.hero.primary.url | relative_url }}">{{ h.hero.primary.label }}</a>
+        <a class="btn btn-ghost" href="{{ h.hero.secondary.url | relative_url }}">{{ h.hero.secondary.label }}</a>
+      </div>
+      <div class="meta">{{ h.hero.meta_prefix }} <b>{{ h.hero.meta_highlight }}</b></div>
+    </div>
+    <div class="mark"><img src="{{ '/assets/img/logo-512.png' | relative_url }}" alt="systems42 logo: two strokes, blue and green, converging on a spiral" width="340" height="340"></div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="wrap two">
+    <div class="stack prose">
+      <h2>{{ h.templates.headline }}</h2>
+      <p class="lede">{{ h.templates.lede }}</p>
+      {% for p in h.templates.paragraphs %}<p>{{ p }}</p>{% endfor %}
+    </div>
+    <blockquote class="quote"><em>{{ h.templates.quote_em }}</em> {{ h.templates.quote_rest }}<span class="who">{{ h.templates.quote_who }}</span></blockquote>
+  </div>
+</section>
+
+<section class="band band-alt">
+  <div class="wrap">
+    <div class="prose stack">
+      <h2>{{ h.loops.headline }}</h2>
+      <p class="lede">{{ h.loops.lede }}</p>
+    </div>
+    <div class="loops">
+      {% for l in h.loops.items %}
+      <div class="loop">
+        {% include loop-figure.html name=l.figure %}
+        <h3>{{ l.name }}</h3>
+        <p>{{ l.text }}</p>
+        <span class="human {{ l.driver_class }}">{{ l.driver }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="two">
+      <div class="stack prose">
+        <h2>{{ h.spec.headline }}</h2>
+        <p class="lede">{{ h.spec.lede }}</p>
+        <p>{{ h.spec.text }}</p>
+      </div>
+      <div class="legend">
+        <span><span class="dot dot-req"></span>req42 · requirements</span>
+        <span><span class="dot dot-arc"></span>arc42 · architecture</span>
+        <span><span class="dot dot-s42"></span>shared by both</span>
+      </div>
+    </div>
+    <div class="drawers">
+      {% for c in site.data.sections.cabinets %}
+      <div class="cabinet{% if c.owner == 'common' %} common{% endif %}">
+        <h3><span class="dot dot-{% if c.owner == 'common' %}s42{% else %}{{ c.owner }}{% endif %}"></span>{{ c.name }}</h3>
+        <div class="cells">
+          {% for s in c.sections %}<div class="cell c-{% if c.owner == 'common' %}fuse{% else %}{{ c.owner }}{% endif %}"><b>{{ s.id }}</b>{{ s.title }}</div>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% assign ev = site.data.events | where: "id", h.status.event | first %}
+<div class="status">
+  <div class="wrap">
+    <div>
+      <h2>{{ h.status.headline }} <b>{{ h.status.highlight }}</b></h2>
+      <p>{{ h.status.text }}</p>
+    </div>
+    {% if ev %}<a class="btn btn-mint" href="{{ '/training/' | relative_url }}">{{ ev.short }}</a>{% endif %}
+  </div>
+</div>
+
+<section class="band band-alt">
+  <div class="wrap">
+    <div class="prose stack">
+      <h2>{{ h.family.headline }}</h2>
+      <p class="lede">{{ h.family.lede }}</p>
+    </div>
+    {% include family-row.html %}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/logo-240.webp' | relative_url }}" alt="" width="38" height="38">
+      systems<span class="num">42</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      {% for item in site.data.nav %}
+        {% assign current = '' %}
+        {% if page.url == item.url or page.nav == item.url %}{% assign current = ' aria-current="page"' %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{{ current }}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+    <div class="mast-right">
+      <button class="btn-42" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="family-pop" title="The 42 family">42</button>
+      {% include family-menu.html %}
+    </div>
+  </div>
+</header>
+<div class="peaks-rule" aria-hidden="true"></div>

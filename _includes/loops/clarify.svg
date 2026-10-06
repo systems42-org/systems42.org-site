@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 900 580" role="img" aria-labelledby="t-clarify">
+  <title id="t-clarify">Clarify loop: Pick Topic, Discuss, Write Back</title>
+  <defs>
+    <marker id="arrow-clarify" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 18 18"><path d="M2 2 L15 9 L2 16" fill="none" stroke="var(--text)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <filter id="shadow-clarify" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0D1727" flood-opacity=".14"/></filter>
+    <style>
+      .flow-clarify{fill:none;stroke:var(--text);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-clarify)}
+      .node-clarify{fill:var(--surface);stroke:var(--text);stroke-width:4;filter:url(#shadow-clarify)}
+      .icon-clarify{fill:none;stroke:var(--text);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .accent-clarify{fill:none;stroke:var(--req-600);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .label-clarify{fill:var(--text);font-family:var(--body);font-size:20px;font-weight:700;text-anchor:middle}
+      .loop-name-clarify{fill:var(--text);font-family:var(--body);font-size:44px;font-weight:700;text-anchor:middle}
+    </style>
+  </defs>
+  <path class="flow-clarify" d="M549.1 139.2 A215 215 0 0 1 664.8 339.6"/>
+  <path class="flow-clarify" d="M565.7 511.2 A215 215 0 0 1 334.3 511.2"/>
+  <path class="flow-clarify" d="M235.2 339.6 A215 215 0 0 1 350.9 139.2"/>
+
+  <text class="loop-name-clarify" x="450" y="345">Clarify</text>
+
+  <g transform="translate(450.0 115.0)">
+    <circle class="node-clarify" r="88"/>
+    <path class="icon-clarify" d="M0 -56 v66 M-14 10 h28"/>
+    <path class="accent-clarify" d="M-4 -50 h30 l10 9 -10 9 h-30 z"/>
+    <path class="icon-clarify" d="M4 -26 h-30 l-10 9 10 9 h30 z"/>
+    <text class="label-clarify" y="37" font-size="19"><tspan x="0">Pick</tspan><tspan x="0" dy="22">Topic</tspan></text>
+  </g>
+  <g transform="translate(636.2 437.5)">
+    <circle class="node-clarify" r="88"/>
+    <g transform="translate(-2 -4)">
+      <path class="icon-clarify" d="M-30 -54 h36 a10 10 0 0 1 10 10 v14 a10 10 0 0 1-10 10 h-18 l-12 10 2-10 h-8 a10 10 0 0 1-10-10 v-14 a10 10 0 0 1 10-10 z"/>
+      <path class="accent-clarify" style="fill:var(--surface)" d="M-2 -36 h36 a10 10 0 0 1 10 10 v14 a10 10 0 0 1-10 10 h-8 l2 10-12-10 h-18 a10 10 0 0 1-10-10 v-14 a10 10 0 0 1 10-10 z"/>
+    </g>
+    <text class="label-clarify" y="42" font-size="19">Discuss</text>
+  </g>
+  <g transform="translate(263.8 437.5)">
+    <circle class="node-clarify" r="88"/>
+    <g transform="translate(-8 0)">
+      <path class="icon-clarify" d="M-30 -52 h36 l14 14 v50 h-50 z M6 -52 v14 h14 M-20 -30 h18 M-20 -18 h24 M-20 -6 h14"/>
+      <path class="accent-clarify" style="fill:var(--surface)" d="M8 10 l4-14 26-26 10 10-26 26 z M12 -4 l10 10"/>
+    </g>
+    <text class="label-clarify" y="37" font-size="19"><tspan x="0">Write</tspan><tspan x="0" dy="22">Back</tspan></text>
+  </g>
+</svg>

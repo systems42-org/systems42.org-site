@@ -1,0 +1,25 @@
+services:
+  jekyll:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: systems42-site:latest
+    init: true
+    environment:
+      JEKYLL_ENV: development
+      POLLING: "--force_polling"
+    volumes:
+      - ..:/site
+      - jekyll_cache:/site/.jekyll-cache
+      - sass_cache:/site/.sass-cache
+    # 4242 is this site's fixed dev port, so it can run next to the other
+    # 42-family dev servers (arc42.org uses 4200). --port is passed to Jekyll
+    # as well as mapped, so its "Server address:" banner names the real port.
+    ports:
+      - '4242:4242'
+    command: >
+      sh -c "bundle exec jekyll serve --host 0.0.0.0 --port 4242 --watch --livereload --livereload-port 35742 $${POLLING}"
+
+volumes:
+  jekyll_cache:
+  sass_cache:

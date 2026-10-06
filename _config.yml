@@ -1,0 +1,54 @@
+title: systems42
+tagline: Where AI meets engineering discipline
+description: >-
+  systems42: agentic engineering built on the proven templates req42 and arc42.
+  Requirements and architecture as living contracts that AI agents read, fill, check and implement.
+url: "https://systems42.org"
+baseurl: ""
+lang: en
+author:
+  name: systems42
+twitter:
+  card: summary
+logo: /assets/img/logo-512.png
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+sass:
+  style: compressed
+  sass_dir: _sass
+  quiet_deps: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: pretty
+
+# All content pages live in _pages/ (a collection that outputs pages).
+# Each page sets its own permalink in the front matter.
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - Makefile
+  - docker/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor/
+  - node_modules/
+  - .claude/
+  - .impeccable/

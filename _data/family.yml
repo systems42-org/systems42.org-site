@@ -1,0 +1,21 @@
+# The 42 family, shown in the "42" popover, on /family/ and in the footer.
+# color: arc (blue), req (green) or s42 (both)
+- name: arc42
+  host: arc42.org
+  url: https://arc42.org
+  color: arc
+  short: The proven template for documenting software architecture.
+  long: All you ever need for your software architecture.
+- name: req42
+  host: req42.de
+  url: https://req42.de
+  color: req
+  short: The practical framework for requirements engineering.
+  long: Home of agile business analysis and requirements engineering.
+- name: systems42
+  host: systems42.org
+  url: /
+  color: s42
+  here: true
+  short: Agentic engineering based on req42 and arc42.
+  long: Agentic engineering based on our proven templates req42 and arc42.

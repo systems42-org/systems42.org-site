@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="wrap pagehead prose">
+  <h1>{{ page.title }}</h1>
+  {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+</div>
+<div class="wrap docs{% unless page.toc %} docs-single{% endunless %}">
+  {% include subnav.html %}
+  <article class="article">
+    {{ content }}
+  </article>
+</div>

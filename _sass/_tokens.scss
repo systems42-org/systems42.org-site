@@ -1,0 +1,37 @@
+// Colour and type tokens. Blue = arc42 / architecture, green = req42 / requirements,
+// both sampled from the logo. "fuse" is where they meet (shared sections, focus).
+@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400 800;font-display:swap;src:url("/assets/fonts/AtkinsonHyperlegibleNext-variable.woff2") format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/LibreCaslonText-400.woff2") format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:italic;font-weight:400;font-display:swap;src:url("/assets/fonts/LibreCaslonText-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/LibreCaslonText-700.woff2") format("woff2")}
+
+:root{
+  --ink:#0D1727; --ink-2:#16233A; --ink-3:#223150;
+  --paper:#F5F8FB; --surface:#FFFFFF; --line:#D6DFEA; --line-strong:#B9C6D6;
+  --text:#15213A; --muted:#55657C; --on-ink:#F2F6FA; --on-ink-muted:#A9B8CC;
+  --arc-100:#E2F0FE; --arc-300:#8CC7FD; --arc-400:#3DA5FB; --arc-600:#1D7FE0; --arc-700:#1A5FB4;
+  --req-100:#DAF7F1; --req-300:#8FE6D8; --req-400:#4BD7C2; --req-600:#17B59D; --req-700:#0B7F6D;
+  --fuse-100:#DFF2F8; --fuse-400:#3FBFE0; --fuse-700:#0E7A93;
+  --peaks:linear-gradient(90deg,var(--arc-400),var(--req-400));
+  --peaks-dark:linear-gradient(90deg,var(--arc-600),var(--req-600));
+  --shadow:0 6px 24px -10px rgba(13,23,39,.28);
+  --display:"Libre Caslon Text","Iowan Old Style",Georgia,serif;
+  --body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --radius:6px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1828; --surface:#152035; --line:#2A3A55; --line-strong:#3A4D6C;
+    --text:#E6EDF6; --muted:#A3B2C7; --arc-100:#17304F; --req-100:#133A37; --fuse-100:#133744;
+    --arc-700:#8CC7FD; --req-700:#8FE6D8; --fuse-700:#7FD6EC; --ink:#070D18; --ink-2:#0D1727; --ink-3:#16233A;
+    --shadow:0 6px 24px -10px rgba(0,0,0,.6); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1828; --surface:#152035; --line:#2A3A55; --line-strong:#3A4D6C;
+  --text:#E6EDF6; --muted:#A3B2C7; --arc-100:#17304F; --req-100:#133A37; --fuse-100:#133744;
+  --arc-700:#8CC7FD; --req-700:#8FE6D8; --fuse-700:#7FD6EC; --ink:#070D18; --ink-2:#0D1727; --ink-3:#16233A;
+  --shadow:0 6px 24px -10px rgba(0,0,0,.6); color-scheme:dark;
+}

@@ -1,0 +1,9 @@
+<div class="family-row">
+  {% for m in site.data.family %}
+  <a href="{% if m.url contains '://' %}{{ m.url }}{% else %}{{ m.url | relative_url }}{% endif %}">
+    <div class="name"><span class="dot dot-{{ m.color }}"></span>{{ m.name }}</div>
+    <p>{{ m.long }}</p>
+    <div class="host">{{ m.host }}</div>
+  </a>
+  {% endfor %}
+</div>

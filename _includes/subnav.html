@@ -1,0 +1,7 @@
+{% if page.toc %}
+<nav class="subnav" aria-label="On this page">
+  <ul>
+    {% for t in page.toc %}<li><a href="#{{ t.id }}">{{ t.title }}</a></li>{% endfor %}
+  </ul>
+</nav>
+{% endif %}

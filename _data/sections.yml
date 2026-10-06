@@ -1,0 +1,29 @@
+# The 18 drawers of the systems42 spec. owner: req, arc or common
+cabinets:
+  - name: req42
+    owner: req
+    sections:
+      - {id: R1, title: Vision & Goals}
+      - {id: R2, title: Resources & Staff}
+      - {id: R3, title: Functional Requirements}
+      - {id: R4, title: Supporting Models}
+      - {id: R5, title: Team Structure}
+      - {id: R6, title: Roadmap}
+  - name: arc42
+    owner: arc
+    sections:
+      - {id: A1, title: Solution Strategy}
+      - {id: A2, title: Building Block View}
+      - {id: A3, title: Deployment View}
+      - {id: A4, title: Runtime View}
+      - {id: A5, title: Crosscutting Concepts}
+      - {id: A6, title: Architecture Decisions}
+  - name: Common
+    owner: common
+    sections:
+      - {id: C1, title: Quality Requirements}
+      - {id: C2, title: Constraints}
+      - {id: C3, title: Scope & Context}
+      - {id: C4, title: Stakeholders}
+      - {id: C5, title: Domain Terms}
+      - {id: C6, title: Risks & Assumptions}

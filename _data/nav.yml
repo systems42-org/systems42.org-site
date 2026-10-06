@@ -1,0 +1,9 @@
+# Top navigation, in order. url must match the page permalink.
+- title: Idea
+  url: /idea/
+- title: Get started
+  url: /get-started/
+- title: Training
+  url: /training/
+- title: About
+  url: /about/

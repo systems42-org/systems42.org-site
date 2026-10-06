@@ -1,0 +1,6 @@
+{% comment %} usage: {% include loop-figure.html name="ingest" %} {% endcomment %}
+{% case include.name %}
+{% when "ingest" %}{% include loops/ingest.svg %}
+{% when "audit" %}{% include loops/audit.svg %}
+{% when "clarify" %}{% include loops/clarify.svg %}
+{% endcase %}
