@@ -1,0 +1,16 @@
+<div class="search-dialog" id="search" hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-box" role="dialog" aria-modal="true" aria-label="Search systems42.org">
+    <form class="search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <span class="search-icon">{% include icons.html name="search" %}</span>
+      <input type="search" name="q" id="search-input" placeholder="Search systems42.org" autocomplete="off" spellcheck="false" aria-label="Search" aria-controls="search-results" aria-expanded="false" role="combobox" aria-autocomplete="list">
+      <button type="button" class="search-esc" data-search-close aria-label="Close">esc</button>
+    </form>
+    <ul class="search-results" id="search-results" role="listbox" aria-label="Results"></ul>
+    <div class="search-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>

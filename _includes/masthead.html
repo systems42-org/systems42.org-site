@@ -1,22 +1,24 @@
 <header class="masthead">
   <div class="wrap">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/img/logo-240.webp' | relative_url }}" alt="" width="38" height="38">
+      <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="38" height="38">
       systems<span class="num">42</span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-    <nav class="nav" id="main-nav" aria-label="Main">
-      {% for item in site.data.nav %}
-        {% assign current = '' %}
-        {% if page.url == item.url or page.nav == item.url %}{% assign current = ' aria-current="page"' %}{% endif %}
-        <a href="{{ item.url | relative_url }}"{{ current }}>{{ item.title }}</a>
+    <nav class="nav" aria-label="Main">
+      {% for item in site.data.nav.primary %}
+        <a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.nav == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
       {% endfor %}
     </nav>
     <div class="mast-right">
-      <button class="btn-42" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="family-pop" title="The 42 family">42</button>
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="Search" title="Search">
+        {% include icons.html name="search" %}<kbd class="kbd-hint" aria-hidden="true">⌘K</kbd>
+      </button>
+      <button class="btn-42" type="button" data-pop="family-pop" aria-expanded="false" aria-haspopup="true" aria-controls="family-pop" title="The 42 family">42</button>
       {% include family-menu.html %}
+      <button class="icon-btn more-open" type="button" data-pop="more-pop" aria-expanded="false" aria-haspopup="true" aria-controls="more-pop" aria-label="More" title="More">
+        {% include icons.html name="menu" %}
+      </button>
+      {% include more-menu.html %}
     </div>
   </div>
 </header>

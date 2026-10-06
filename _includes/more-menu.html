@@ -1,0 +1,19 @@
+<div class="pop more-pop" id="more-pop" hidden>
+  <ul class="pop-list primary-in-more" aria-label="Main">
+    {% for item in site.data.nav.primary %}
+    <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="ttl">More</div>
+  <ul class="pop-list">
+    {% for item in site.data.nav.more %}
+    <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}<small>{{ item.note }}</small></a></li>
+    {% endfor %}
+  </ul>
+  <div class="ttl">Appearance</div>
+  <div class="theme-switch" role="group" aria-label="Appearance">
+    <button type="button" data-theme-set="light" aria-pressed="false">{% include icons.html name="sun" %}Light</button>
+    <button type="button" data-theme-set="dark" aria-pressed="false">{% include icons.html name="moon" %}Dark</button>
+    <button type="button" data-theme-set="auto" aria-pressed="true">{% include icons.html name="auto" %}Auto</button>
+  </div>
+</div>

@@ -46,3 +46,11 @@
   .event{grid-template-columns:1fr}.event .date{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;text-align:left}
   .people{grid-template-columns:1fr}
 }
+
+.post-date{color:var(--muted);font-size:.95rem;margin-bottom:.4em}
+.post-list{list-style:none;padding:0;margin-top:0;max-width:68ch}
+.post-list li{padding:14px 0;border-top:1px solid var(--line)}
+.post-list time{display:block;font-size:.85rem;color:var(--muted)}
+.post-list a{font-family:var(--display);font-size:1.35rem;text-decoration:none}
+.post-list p{margin-top:4px;color:var(--muted)}
+.post-back{margin-top:2.5em}

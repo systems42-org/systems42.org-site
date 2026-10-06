@@ -1,12 +1,15 @@
 <footer class="footer">
   <div class="wrap">
     <div>
-      <div class="brand"><img src="{{ '/assets/img/logo-240.webp' | relative_url }}" alt="" width="30" height="30">systems<span class="num">42</span></div>
+      <div class="brand"><img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="30" height="30">systems<span class="num">42</span></div>
       <p>Where AI meets engineering discipline. Built on req42 and arc42.</p>
     </div>
     <div>
       <h4>Pages</h4>
-      <ul>{% for item in site.data.nav %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+      <ul>
+        {% for item in site.data.nav.primary %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}
+        {% for item in site.data.nav.more %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}
+      </ul>
     </div>
     <div>
       <h4>42 family</h4>

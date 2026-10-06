@@ -1,9 +1,22 @@
-# Top navigation, in order. url must match the page permalink.
-- title: Idea
-  url: /idea/
-- title: Get started
-  url: /get-started/
-- title: Training
-  url: /training/
-- title: About
-  url: /about/
+# Top navigation. "primary" sits in the masthead, "more" in the hamburger menu
+# (on small screens the hamburger shows both). url must match the page permalink.
+primary:
+  - title: Idea
+    url: /idea/
+  - title: Get started
+    url: /get-started/
+  - title: Training
+    url: /training/
+more:
+  - title: Blog
+    url: /blog/
+    note: News and longer thoughts
+  - title: Publications
+    url: /publications/
+    note: Articles, talks and books
+  - title: Examples
+    url: /examples/
+    note: Projects run through the cycle
+  - title: About
+    url: /about/
+    note: The people behind systems42

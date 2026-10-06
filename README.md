@@ -20,10 +20,13 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | What | Where |
 |---|---|
 | Texts of the home page | `_data/home.yml` |
-| Top navigation | `_data/nav.yml` |
+| Top navigation and the "More" menu | `_data/nav.yml` (`primary` and `more`) |
 | 42 family members | `_data/family.yml` |
 | Seminars | `_data/events.yml` |
 | The 18 spec sections | `_data/sections.yml` |
+| Blog posts | `_posts/YYYY-MM-DD-slug.md`, layout `post`; `_drafts/` holds an example |
+| Search | `search.json` (built by Jekyll) + lunr.js in `assets/js/`; Cmd-K / Ctrl-K or the magnifier opens it; `/search/` shows all results |
+| Logo | `assets/img/logo.svg` (vector); PNG/ICO icons are generated from it |
 | Pages | `_pages/*.md`, layout `page`, `permalink:` in the front matter; `toc:` adds the sub-navigation |
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |

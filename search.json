@@ -1,0 +1,18 @@
+---
+layout: none
+sitemap: false
+---
+{%- assign docs = site.documents | where_exp: "d", "d.search != false" | where_exp: "d", "d.url != '/404.html'" -%}
+{%- assign h = site.data.home -%}
+{%- capture home_text -%}
+{{ h.hero.headline }} {{ h.hero.sub }} {{ h.templates.headline }} {{ h.templates.lede }} {{ h.templates.paragraphs | join: " " }} {{ h.templates.quote_em }} {{ h.templates.quote_rest }} {{ h.loops.headline }} {{ h.loops.lede }} {% for l in h.loops.items %}{{ l.name }}: {{ l.text }} {% endfor %}{{ h.spec.headline }} {{ h.spec.lede }} {{ h.spec.text }} {{ h.status.headline }} {{ h.status.highlight }} {{ h.status.text }} {{ h.family.headline }} {{ h.family.lede }}
+{%- endcapture -%}
+[
+{%- for d in docs -%}
+{"url": {{ d.url | relative_url | jsonify }},
+ "title": {{ d.title | jsonify }},
+ "lede": {{ d.lede | default: "" | jsonify }},
+ "type": {{ d.collection | jsonify }},
+ "content": {% if d.url == "/" %}{{ home_text | normalize_whitespace | jsonify }}{% else %}{{ d.content | markdownify | strip_html | normalize_whitespace | jsonify }}{% endif %}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]
