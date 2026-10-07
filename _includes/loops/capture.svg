@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 900 580" role="img" aria-labelledby="t-capture">
+  <title id="t-capture">Capture loop: Markdownify, Cross-check + Link, Ask Questions</title>
+  <defs>
+    <marker id="arrow-capture" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 18 18"><path d="M2 2 L15 9 L2 16" fill="none" stroke="var(--text)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <filter id="shadow-capture" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0D1727" flood-opacity=".14"/></filter>
+    <style>
+      .flow-capture{fill:none;stroke:var(--text);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-capture)}
+      .node-capture{fill:var(--surface);stroke:var(--text);stroke-width:4;filter:url(#shadow-capture)}
+      .icon-capture{fill:none;stroke:var(--text);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .accent-capture{fill:none;stroke:var(--arc-600);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .label-capture{fill:var(--text);font-family:var(--body);font-size:20px;font-weight:700;text-anchor:middle}
+      .loop-name-capture{fill:var(--text);font-family:var(--display);font-size:44px;font-weight:700;text-anchor:middle}
+    </style>
+  </defs>
+  <path class="flow-capture" d="M549.1 139.2 A215 215 0 0 1 664.8 339.6"/>
+  <path class="flow-capture" d="M565.7 511.2 A215 215 0 0 1 334.3 511.2"/>
+  <path class="flow-capture" d="M235.2 339.6 A215 215 0 0 1 350.9 139.2"/>
+
+  <text class="loop-name-capture" x="450" y="345">Capture</text>
+
+  <g transform="translate(450.0 115.0)">
+    <circle class="node-capture" r="88"/>
+    <g transform="translate(0 -12)">
+      <path class="icon-capture" d="M-22 -48 h30 l20 20 v47 h-50 z M8 -48 v20 h20"/>
+      <text x="3" y="-3" fill="var(--arc-600)" font-family="Atkinson Hyperlegible Next, sans-serif" font-size="28" font-weight="800" text-anchor="middle">M</text>
+    </g>
+    <text class="label-capture" y="44" font-size="16">Markdownify</text>
+  </g>
+  <g transform="translate(636.2 437.5)">
+    <circle class="node-capture" r="88"/>
+    <g transform="translate(0 -26) rotate(-38)"><rect class="icon-capture" x="-38" y="-13" width="48" height="26" rx="13"/><rect class="accent-capture" x="-10" y="-13" width="48" height="26" rx="13"/><path class="icon-capture" d="M-10 0 h20"/></g>
+    <text class="label-capture" y="26" font-size="18"><tspan x="0">Cross-check</tspan><tspan x="0" dy="22">+ Link</tspan></text>
+  </g>
+  <g transform="translate(263.8 437.5)">
+    <circle class="node-capture" r="88"/>
+    <g transform="translate(0 -6)">
+      <path class="icon-capture" d="M-29 -48 h58 a12 12 0 0 1 12 12 v22 a12 12 0 0 1-12 12 h-24 l-18 14 4-14 h-20 a12 12 0 0 1-12-12 v-22 a12 12 0 0 1 12-12 z"/>
+      <text x="0" y="-13" fill="var(--arc-600)" font-family="Atkinson Hyperlegible Next, sans-serif" font-size="34" font-weight="800" text-anchor="middle">?</text>
+    </g>
+    <text class="label-capture" y="36" font-size="18"><tspan x="0">Ask</tspan><tspan x="0" dy="22">Questions</tspan></text>
+  </g>
+</svg>

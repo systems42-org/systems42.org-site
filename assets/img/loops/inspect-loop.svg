@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="580" viewBox="0 0 900 580" role="img" aria-labelledby="t">
-  <title id="t">Audit loop: Detect Issues, Flag Gaps, Update Backlog</title>
+  <title id="t">Inspect loop: Detect Issues, Flag Gaps, Update Backlog</title>
   <defs>
     <marker id="arrow" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 18 18"><path d="M2 2 L15 9 L2 16" fill="none" stroke="#0b2a64" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0b2a64" flood-opacity=".14"/></filter>
@@ -8,8 +8,8 @@
       .node{fill:#fff;stroke:#0b2a64;stroke-width:4;filter:url(#shadow)}
       .icon{fill:none;stroke:#0b2a64;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
       .accent{fill:none;stroke:#ff5a00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-      .label{fill:#0b2a64;font-family:"Arial Rounded MT Bold","Comic Sans MS",sans-serif;font-size:20px;font-weight:700;text-anchor:middle}
-      .loop-name{fill:#0b2a64;font-family:"Arial Rounded MT Bold","Comic Sans MS",sans-serif;font-size:44px;font-weight:700;text-anchor:middle}
+      .label{fill:#0b2a64;font-family:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",-apple-system,"Segoe UI",Roboto,sans-serif;font-size:20px;font-weight:700;text-anchor:middle}
+      .loop-name{fill:#0b2a64;font-family:"Libre Caslon Text","Iowan Old Style",Georgia,serif;font-size:44px;font-weight:700;text-anchor:middle}
     </style>
   </defs>
 
@@ -18,7 +18,7 @@
   <path class="flow" d="M565.7 511.2 A215 215 0 0 1 334.3 511.2"/>
   <path class="flow" d="M235.2 339.6 A215 215 0 0 1 350.9 139.2"/>
 
-  <text class="loop-name" x="450" y="345">Audit</text>
+  <text class="loop-name" x="450" y="345">Inspect</text>
 
   <g transform="translate(450.0 115.0)">
     <circle class="node" r="88"/>

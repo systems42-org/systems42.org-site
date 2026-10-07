@@ -21,13 +21,13 @@ loops:
   headline: Three loops keep the spec alive.
   lede: AI fills and checks the spec. Humans decide where it matters.
   items:
-    - name: Ingest
-      figure: ingest
+    - name: Capture
+      figure: capture
       text: Humans provide raw input. AI turns it into clean markdown, files it into the matching spec sections, cross-links it and asks when something does not fit.
       driver: AI, started by a human
       driver_class: h-ai
-    - name: Audit
-      figure: audit
+    - name: Inspect
+      figure: inspect
       text: Time-triggered or on demand, AI checks the spec against rules, guardrails and constraints and adds every finding to the backlog.
       driver: AI, scheduled or on demand
       driver_class: h-ai

@@ -9,7 +9,7 @@
       .icon-clarify{fill:none;stroke:var(--text);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
       .accent-clarify{fill:none;stroke:var(--req-600);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
       .label-clarify{fill:var(--text);font-family:var(--body);font-size:20px;font-weight:700;text-anchor:middle}
-      .loop-name-clarify{fill:var(--text);font-family:var(--body);font-size:44px;font-weight:700;text-anchor:middle}
+      .loop-name-clarify{fill:var(--text);font-family:var(--display);font-size:44px;font-weight:700;text-anchor:middle}
     </style>
   </defs>
   <path class="flow-clarify" d="M549.1 139.2 A215 215 0 0 1 664.8 339.6"/>

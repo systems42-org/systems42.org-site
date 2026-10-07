@@ -23,7 +23,7 @@ Together they form the spec from which source code can be developed. systems42 t
 
 Three loops run around the spec. Two are driven by AI, one is a conversation between humans and AI. All three ask for clarification where necessary.
 
-### Ingest
+### Capture
 
 Humans provide raw input and trigger the AI to fill the spec.
 
@@ -33,9 +33,9 @@ Humans provide raw input and trigger the AI to fill the spec.
 <li><strong>Ask questions</strong>If not, the AI creates questions or issues to be answered by a human, see Clarify.</li>
 </ol>
 
-### Audit
+### Inspect
 
-Audits can be time-triggered, for example after an ingest or at defined intervals, or explicitly triggered by humans.
+Inspections can be time-triggered, for example after a capture or at defined intervals, or explicitly triggered by humans.
 
 <ol class="steps">
 <li><strong>Detect issues</strong>The content of the spec is checked against predefined rules, guardrails and constraints.</li>

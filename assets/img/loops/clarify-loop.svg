@@ -8,8 +8,8 @@
       .node{fill:#fff;stroke:#0b2a64;stroke-width:4;filter:url(#shadow)}
       .icon{fill:none;stroke:#0b2a64;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
       .accent{fill:none;stroke:#ff5a00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-      .label{fill:#0b2a64;font-family:"Arial Rounded MT Bold","Comic Sans MS",sans-serif;font-size:20px;font-weight:700;text-anchor:middle}
-      .loop-name{fill:#0b2a64;font-family:"Arial Rounded MT Bold","Comic Sans MS",sans-serif;font-size:44px;font-weight:700;text-anchor:middle}
+      .label{fill:#0b2a64;font-family:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",-apple-system,"Segoe UI",Roboto,sans-serif;font-size:20px;font-weight:700;text-anchor:middle}
+      .loop-name{fill:#0b2a64;font-family:"Libre Caslon Text","Iowan Old Style",Georgia,serif;font-size:44px;font-weight:700;text-anchor:middle}
     </style>
   </defs>
 

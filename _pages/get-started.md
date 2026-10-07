@@ -16,8 +16,8 @@ We are currently testing our approach with many examples. As soon as we have sol
 
 <ol class="steps">
 <li><strong>The templates</strong>req42 and arc42 sections as a ready-to-use markdown wiki structure.</li>
-<li><strong>The loops</strong>Harnesses for Ingest, Audit and Clarify that you can run with the AI tooling of your choice.</li>
-<li><strong>Rules and guardrails</strong>A starter set of checks the Audit loop runs against your spec, and how to add your own.</li>
+<li><strong>The loops</strong>Harnesses for Capture, Inspect and Clarify that you can run with the AI tooling of your choice.</li>
+<li><strong>Rules and guardrails</strong>A starter set of checks the Inspect loop runs against your spec, and how to add your own.</li>
 <li><strong>Worked examples</strong>Real projects we ran through the cycle, with their specs and findings.</li>
 </ol>
 

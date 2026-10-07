@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 900 580" role="img" aria-labelledby="t-inspect">
+  <title id="t-inspect">Inspect loop: Detect Issues, Flag Gaps, Update Backlog</title>
+  <defs>
+    <marker id="arrow-inspect" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 18 18"><path d="M2 2 L15 9 L2 16" fill="none" stroke="var(--text)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <filter id="shadow-inspect" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0D1727" flood-opacity=".14"/></filter>
+    <style>
+      .flow-inspect{fill:none;stroke:var(--text);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-inspect)}
+      .node-inspect{fill:var(--surface);stroke:var(--text);stroke-width:4;filter:url(#shadow-inspect)}
+      .icon-inspect{fill:none;stroke:var(--text);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .accent-inspect{fill:none;stroke:var(--arc-600);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .label-inspect{fill:var(--text);font-family:var(--body);font-size:20px;font-weight:700;text-anchor:middle}
+      .loop-name-inspect{fill:var(--text);font-family:var(--display);font-size:44px;font-weight:700;text-anchor:middle}
+    </style>
+  </defs>
+  <path class="flow-inspect" d="M549.1 139.2 A215 215 0 0 1 664.8 339.6"/>
+  <path class="flow-inspect" d="M565.7 511.2 A215 215 0 0 1 334.3 511.2"/>
+  <path class="flow-inspect" d="M235.2 339.6 A215 215 0 0 1 350.9 139.2"/>
+
+  <text class="loop-name-inspect" x="450" y="345">Inspect</text>
+
+  <g transform="translate(450.0 115.0)">
+    <circle class="node-inspect" r="88"/>
+    <circle class="icon-inspect" cx="-8" cy="-22" r="24"/>
+    <circle class="accent-inspect" cx="-8" cy="-22" r="13"/>
+    <path class="icon-inspect" d="M10 -4 l25 25"/>
+    <text class="label-inspect" y="37" font-size="19"><tspan x="0">Detect</tspan><tspan x="0" dy="22">Issues</tspan></text>
+  </g>
+  <g transform="translate(636.2 437.5)">
+    <circle class="node-inspect" r="88"/>
+    <path class="icon-inspect" d="M-22 -49 v48 M-22-44 h50 l-8 16 8 16 h-50"/>
+    <path class="accent-inspect" d="M-15 -39 h34 l-6 11 6 11 h-34 z"/>
+    <text class="label-inspect" y="37" font-size="19"><tspan x="0">Flag</tspan><tspan x="0" dy="22">Gaps</tspan></text>
+  </g>
+  <g transform="translate(263.8 437.5)">
+    <circle class="node-inspect" r="88"/>
+    <g transform="translate(0 -8)">
+      <path class="icon-inspect" d="M-27 -46 h54 v61 h-54 z M-12 -52 h24 v12 h-24 z M-15 -27 l5 5 9-10 M5 -27 h13 M-15 -7 l5 5 9-10 M5 -7 h13 M-15 13 l5 5 9-10 M5 13 h13"/>
+      <path class="accent-inspect" d="M-15 -27 l5 5 9-10 M-15 -7 l5 5 9-10 M-15 13 l5 5 9-10"/>
+    </g>
+    <text class="label-inspect" y="37" font-size="19"><tspan x="0">Update</tspan><tspan x="0" dy="22">Backlog</tspan></text>
+  </g>
+</svg>
