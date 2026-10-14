@@ -61,12 +61,12 @@ layout: default
         <span><span class="dot dot-s42"></span>shared by both</span>
       </div>
     </div>
-    <div class="drawers">
-      {% for c in site.data.sections.cabinets %}
-      <div class="cabinet{% if c.owner == 'common' %} common{% endif %}">
-        <h3><span class="dot dot-{% if c.owner == 'common' %}s42{% else %}{{ c.owner }}{% endif %}"></span>{{ c.name }}</h3>
+    <div class="spec-groups">
+      {% for g in site.data.sections.groups %}
+      <div class="spec-group{% if g.owner == 'common' %} common{% endif %}">
+        <h3><span class="dot dot-{% if g.owner == 'common' %}s42{% else %}{{ g.owner }}{% endif %}"></span>{{ g.name }}</h3>
         <div class="cells">
-          {% for s in c.sections %}<div class="cell c-{% if c.owner == 'common' %}fuse{% else %}{{ c.owner }}{% endif %}"><b>{{ s.id }}</b>{{ s.title }}</div>{% endfor %}
+          {% for s in g.sections %}<div class="cell c-{% if g.owner == 'common' %}fuse{% else %}{{ g.owner }}{% endif %}"><b>{{ s.id }}</b>{{ s.title }}</div>{% endfor %}
         </div>
       </div>
       {% endfor %}

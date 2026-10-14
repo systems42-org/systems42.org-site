@@ -1,5 +1,5 @@
-# The 18 drawers of the systems42 spec. owner: req, arc or common
-cabinets:
+# The 18 sections of the systems42 spec. owner: req, arc or common
+groups:
   - name: req42
     owner: req
     sections:
