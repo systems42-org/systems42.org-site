@@ -38,7 +38,7 @@ loops:
       driver_class: h-both
 
 spec:
-  headline: One spec. Eighteen drawers.
+  headline: One spec. Eighteen sections.
   lede: req42 for requirements, arc42 for architecture, six sections they share. Together they are the single source of truth from which code is generated and tested.
   text: Both templates have been used for more than 20 years, in many countries and domains. systems42 does not replace them. It makes them executable.
 
