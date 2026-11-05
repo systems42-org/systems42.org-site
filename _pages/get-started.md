@@ -23,6 +23,6 @@ We are currently testing our approach with many examples. As soon as we have sol
 
 ## Experiment with us {#experiment-with-us}
 
-Until then, visit our first seminar on January 26–28, 2027 and experiment with us.
+Until then, visit our first seminar on January 28–29, 2027 in Vienna (or online on February 2–3, 2027) and experiment with us.
 
 <p><a class="btn btn-blue" href="{{ '/training/' | relative_url }}">See the seminar</a></p>

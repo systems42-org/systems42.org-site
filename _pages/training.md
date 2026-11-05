@@ -15,9 +15,10 @@ toc:
   <div class="date"><b>{{ ev.day_range }}</b><span>{{ ev.month }}</span></div>
   <div>
     <h3>{{ ev.title }}</h3>
-    <p>{{ ev.description }}</p>
+    <p>{{ ev.subtitle }}</p>
+    <p><b>{{ ev.where }}</b></p>
     <div class="cta">
-      <a class="btn btn-blue" href="#register">Register interest</a>
+      {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
       <a class="btn btn-outline" href="#agenda">Agenda</a>
     </div>
   </div>
@@ -26,11 +27,18 @@ toc:
 
 ### Agenda {#agenda}
 
-The detailed agenda will be published here. Expect three days: the spec and the single source of truth, the three loops with your own material, and rules and guardrails for your team.
+The detailed agenda will be published here. Expect two days: the spec and the single source of truth, the three loops with your own material, and rules and guardrails for your team.
 
-### Register interest {#register}
+### Registration {#register}
 
-Registration opens later in 2026. Until then, write to us and we put you on the list.
+{% assign open_events = site.data.events | where: "registration_open", true %}
+{% if open_events.size > 0 %}
+Registration runs through the training site of our sister project arc42: the Register button opens its form with your date already selected. You confirm your e-mail address with a code from the confirmation mail, then we get in touch.
+
+The dates are also listed with all other courses at [trainings.arc42.org](https://trainings.arc42.org/).
+{% else %}
+Registration opens shortly through the training site of our sister project arc42. Until then, write to us and we put you on the list.
+{% endif %}
 
 ## In-house {#in-house}
 

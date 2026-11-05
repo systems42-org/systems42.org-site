@@ -26,7 +26,8 @@
 .steps li strong{display:block}
 
 .event{display:grid;grid-template-columns:auto 1fr;gap:24px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px 24px;max-width:760px;box-shadow:var(--shadow);margin-top:1em}
-.event .date{font-family:var(--display);line-height:1;text-align:center;padding:6px 16px;border-right:1px solid var(--line)}
+/* min-width keeps the text column aligned across cards: "28–29" is wider than "2–3". */
+.event .date{font-family:var(--display);line-height:1;text-align:center;padding:6px 16px;border-right:1px solid var(--line);min-width:10.5rem}
 .event .date b{display:block;font-size:2.6rem;font-weight:400}
 .event .date span{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:6px}
 .event h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0}
@@ -43,7 +44,7 @@
   .docs{grid-template-columns:1fr}.subnav{position:static}
   .subnav ul{display:flex;flex-wrap:wrap;gap:4px;border:0}.subnav a{border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:0}
   .subnav a[aria-current]{border-color:var(--req-600)}
-  .event{grid-template-columns:1fr}.event .date{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;text-align:left}
+  .event{grid-template-columns:1fr}.event .date{min-width:0;border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;text-align:left}
   .people{grid-template-columns:1fr}
 }
 
