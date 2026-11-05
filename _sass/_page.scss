@@ -37,6 +37,9 @@
 .people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:1.2em}
 .person{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:18px}
 .person .photo{width:84px;height:84px;border-radius:50%;background:var(--arc-100);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.6rem;color:var(--arc-700);margin-bottom:12px}
+/* Portraits are 300px squares, shown as 84px circles; the circle's background colour shows while an image loads. */
+.person .photo{overflow:hidden}
+.person .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .person h3{margin:0;font-family:var(--display);font-weight:400;font-size:1.25rem}
 .person p{margin-top:6px;color:var(--muted);font-size:.95rem}
 
