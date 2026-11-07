@@ -1,0 +1,25 @@
+{%- comment -%}
+  Agenda, takeaways and prerequisites of the seminar, from _data/course/<lang>.yml.
+  Used by the flyer and by /training/, so the text exists only once per language.
+  Params: course (a _data/course entry), level (heading level, default 2)
+{%- endcomment -%}
+{%- assign ca = include.course -%}
+{%- assign h1 = include.level | default: 2 -%}
+{%- assign h2 = h1 | plus: 1 -%}
+<h{{ h1 }}>{{ ca.topics_heading }}</h{{ h1 }}>
+{% for day in ca.days -%}
+<h{{ h2 }}>{{ day.title }}</h{{ h2 }}>
+<ul>
+  {%- for t in day.topics -%}
+  {%- if t.text -%}
+  <li>{{ t.text }}{% if t.sub %}<ul>{% for s in t.sub %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}</li>
+  {%- else -%}
+  <li>{{ t }}</li>
+  {%- endif -%}
+  {%- endfor -%}
+</ul>
+{% endfor -%}
+<h{{ h1 }}>{{ ca.takeaways_heading }}</h{{ h1 }}>
+<ul>{% for t in ca.takeaways %}<li>{{ t }}</li>{% endfor %}</ul>
+<h{{ h1 }}>{{ ca.prerequisites_heading }}</h{{ h1 }}>
+{{ ca.prerequisites | markdownify }}

@@ -1,11 +1,15 @@
 <!doctype html>
 {%- comment -%}
-  One-page A4 seminar flyer. Main column from the page body, sidebar from
-  front matter, course title and dates from _data/events.yml.
-  scripts/flyer-pdf.mjs prints this page to page.pdf.
+  One-page A4 seminar flyer. Text from _data/course/<lang>.yml (shared with
+  /training/), dates from _data/events.yml (upcoming ones only, without
+  trainer names: the sidebar has no room for them). The flyer's own front
+  matter holds only what exists on the flyer alone.
+  scripts/flyer-pdf.mjs prints this page to the path in `pdf:`.
 {%- endcomment -%}
-{%- assign course = site.data.events | first -%}
-<html lang="{{ page.lang | default: 'de' }}" data-theme="light">
+{%- assign lang = page.lang | default: 'de' -%}
+{%- assign course = site.data.course[lang] -%}
+{%- assign today = 'now' | date: '%Y-%m-%d' -%}
+<html lang="{{ lang }}" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,34 +19,38 @@
   <link rel="stylesheet" href="{{ '/assets/css/flyer.css' | relative_url }}">
 </head>
 <body class="flyer-screen">
-  {% if page.pdf %}<p class="flyer-download"><a href="{{ page.pdf | relative_url }}">PDF herunterladen</a></p>{% endif %}
+  <p class="flyer-download"><a href="{{ page.pdf | relative_url }}">{{ page.download_label }}</a></p>
   <div class="sheet">
     <main class="flyer-main">
       <img class="flyer-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="systems42">
-      <p class="flyer-kicker">{{ page.kicker }}</p>
+      <p class="flyer-kicker">{{ course.kicker }}</p>
       <h1>{{ course.title }}</h1>
-      <p class="flyer-sub">{{ page.subtitle }}</p>
+      <p class="flyer-sub">{{ course.subtitle }}</p>
       <div class="flyer-body">
-        {{ content }}
+        {{ course.intro | markdownify }}
+        {% include course-agenda.html course=course level=2 %}
+        <h2>{{ page.more_info_label }}</h2>
+        <p><a href="https://systems42.org/training/">www.systems42.org/training</a></p>
       </div>
     </main>
     <aside class="flyer-side">
-      <h2>{{ page.sidebar_title }}</h2>
+      <h2>{{ course.facts_heading }}</h2>
       <dl>
-        <dt>Termine</dt>
-        <dd><ul class="flyer-dates">
+        {%- capture dates -%}
           {%- for ev in site.data.events -%}
-          <li><b>{{ ev.day_range | replace: "–", ".–" }}.{{ ev.date_iso | date: "%m.%Y" }}</b><br>{{ ev.where_de | default: ev.where }}</li>
+          {%- assign start = ev.date_iso | date: '%Y-%m-%d' -%}
+          {%- if start < today -%}{%- continue -%}{%- endif -%}
+          <li><b>
+            {%- if lang == 'de' -%}{{ ev.day_range | replace: "–", ".–" }}.{{ ev.date_iso | date: "%m.%Y" }}
+            {%- else -%}{{ ev.day_range }} {{ ev.month }}{%- endif -%}
+          </b><br>{% if lang == 'de' %}{{ ev.where_de | default: ev.where }}{% else %}{{ ev.where }}{% endif %}</li>
           {%- endfor -%}
-        </ul></dd>
-        {%- for f in page.facts -%}
-        <dt>{{ f.label }}</dt>
-        <dd>
-          {%- if f.text -%}{{ f.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{%- endif -%}
-          {%- if f.names -%}{% for n in f.names %}<br><b>{{ n }}</b>{% endfor %}{%- endif -%}
-          {%- if f.list -%}<ul>{% for i in f.list %}<li>{{ i }}</li>{% endfor %}</ul>{%- endif -%}
-        </dd>
-        {%- endfor -%}
+        {%- endcapture -%}
+        {%- if dates != "" -%}
+        <dt>{{ course.dates_label }}</dt>
+        <dd><ul class="flyer-dates">{{ dates }}</ul></dd>
+        {%- endif -%}
+        {% include course-facts.html course=course medium="flyer" %}
       </dl>
     </aside>
   </div>

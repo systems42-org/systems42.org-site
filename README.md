@@ -30,7 +30,7 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | Pages | `_pages/*.md`, layout `page`, `permalink:` in the front matter; `toc:` adds the sub-navigation |
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |
-| Seminar flyer (PDF) | `_flyers/de.md` (text, price, sidebar), layout `flyer`, styles `_sass/_flyer-sheet.scss`; title and dates come from `_data/events.yml` |
+| Seminar description and flyers | `_data/course/de.yml` and `en.yml` (text, agenda, key facts; shared by the flyers and /training/), `_flyers/*.md` (one per language), layout `flyer`, styles `_sass/_flyer-sheet.scss`; dates from `_data/events.yml` |
 | Loop diagrams | `_includes/loops/*.svg` (inlined so they take the page colours); originals in `assets/img/loops/` |
 
 Colour rule: blue is arc42 and architecture, green is req42 and requirements, the gradient marks where both meet.

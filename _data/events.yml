@@ -6,6 +6,10 @@
 # course from ?kurs=<arc42_id>, and the service accepts only booking codes it
 # finds in that site's feed. The title stays English on every page.
 # where_de is the German line for the printed flyer (_flyers/de.md).
+# trainers shows on /training/ only; the flyer lists dates without them.
+#
+# This mirrors the date in arc42's trainings.yml by hand, on purpose: no build
+# dependency on arc42. Only arc42_id links the two, so keep it in step.
 #
 # registration_open shows the Register button. Set it to true only once the
 # date is live on trainings.arc42.org; before that the form would neither
@@ -13,7 +17,8 @@
 - id: seminar-2027-01
   arc42_id: systems42-jan-2027
   registration_open: false
-  title: Mastering AI-Driven Specifications
+  title: Mastering AI-Driven Specification
+  trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
   day_range: 28–29
   month: January 2027
@@ -25,7 +30,8 @@
 - id: seminar-2027-02-online
   arc42_id: systems42-feb-2027-online
   registration_open: false
-  title: Mastering AI-Driven Specifications
+  title: Mastering AI-Driven Specification
+  trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
   day_range: 2–3
   month: February 2027
