@@ -11,8 +11,7 @@
 .article h2{margin-top:2.2em;padding-top:.2em}
 .article>h2:first-child{margin-top:0}
 .article h3{margin-top:1.6em;font-family:var(--body);font-weight:800;font-size:1.05rem}
-.article h4{margin-top:1.4em;font-family:var(--display);font-weight:400;font-size:1.2rem}
-.article h5{margin:1em 0 0;font-size:1rem;font-weight:700;color:var(--arc-700)}
+.article h4{margin-top:1.1em;font-size:1rem;font-weight:700;color:var(--arc-700)}
 .article li>ul{margin-top:.35em}
 /* Seminar key facts on /training/ (_includes/course-facts.html) */
 .facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 20px;margin:1.2em 0 0;max-width:68ch}

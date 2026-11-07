@@ -4,6 +4,7 @@ lede: Seminars and in-house consulting for agentic engineering with systems42.
 permalink: /training/
 toc:
   - {title: Seminar, id: seminar}
+  - {title: About the seminar, id: about-seminar}
   - {title: In-house, id: in-house}
   - {title: 42 family seminars, id: family-seminars}
 ---
@@ -28,15 +29,6 @@ toc:
 </div>
 {% endfor %}
 
-### About the seminar {#about-seminar}
-
-{% assign course = site.data.course.en %}
-{{ course.intro | markdownify }}
-
-<dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
-
-{% include course-agenda.html course=course level=4 topics_id="agenda" %}
-
 ### Registration {#register}
 
 {% assign open_events = site.data.events | where: "registration_open", true %}
@@ -47,6 +39,15 @@ The dates are also listed with all other courses at [trainings.arc42.org](https:
 {% else %}
 Registration opens shortly through the training site of our sister project arc42. Until then, write to us and we put you on the list.
 {% endif %}
+
+## About the seminar {#about-seminar}
+
+{% assign course = site.data.course.en %}
+{{ course.intro | markdownify }}
+
+<dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
+
+{% include course-agenda.html course=course level=3 topics_id="agenda" %}
 
 ## In-house {#in-house}
 
