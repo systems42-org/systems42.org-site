@@ -1,12 +1,14 @@
 {%- comment -%}
   Agenda, takeaways and prerequisites of the seminar, from _data/course/<lang>.yml.
   Used by the flyer and by /training/, so the text exists only once per language.
-  Params: course (a _data/course entry), level (heading level, default 2)
+  Params: course (a _data/course entry), level (heading level, default 2),
+          topics_id (optional id on the Topics heading; /training/ uses "agenda",
+          the target of agenda_url in _data/events.yml)
 {%- endcomment -%}
 {%- assign ca = include.course -%}
 {%- assign h1 = include.level | default: 2 -%}
 {%- assign h2 = h1 | plus: 1 -%}
-<h{{ h1 }}>{{ ca.topics_heading }}</h{{ h1 }}>
+<h{{ h1 }}{% if include.topics_id %} id="{{ include.topics_id }}"{% endif %}>{{ ca.topics_heading }}</h{{ h1 }}>
 {% for day in ca.days -%}
 <h{{ h2 }}>{{ day.title }}</h{{ h2 }}>
 <ul>

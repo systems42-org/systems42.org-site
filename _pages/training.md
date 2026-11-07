@@ -20,7 +20,7 @@ toc:
     <p><b>{{ ev.where }}</b></p>
     <div class="cta">
       {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
-      <a class="btn btn-outline" href="#agenda">Agenda</a>
+      <a class="btn btn-outline" href="#about-seminar">About the seminar</a>
     </div>
   </div>
 </div>
@@ -28,14 +28,14 @@ toc:
 
 Seminar flyer as PDF: [English](/assets/flyer-MAS-systems42-EN.pdf) · [German](/assets/flyer-MAS-systems42-DE.pdf)
 
-### Agenda {#agenda}
+### About the seminar {#about-seminar}
 
 {% assign course = site.data.course.en %}
 {{ course.intro | markdownify }}
 
 <dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
 
-{% include course-agenda.html course=course level=4 %}
+{% include course-agenda.html course=course level=4 topics_id="agenda" %}
 
 ### Registration {#register}
 

@@ -1,6 +1,6 @@
 # Seminar description, German. Read by the German flyer (_flyers/de.md ->
 # _layouts/flyer.html). en.yml has the same keys in English and also feeds
-# the agenda on /training/. Keep both files in the same structure.
+# the "About the seminar" section on /training/. Keep both files in the same structure.
 #
 # Dates come from _data/events.yml, not from here. What only makes sense in
 # one medium (the "more information" link on the flyer, the Register button
@@ -84,6 +84,6 @@ facts:
       - Peter Gerstbach
   - label: Format
     list:
-      - Offen oder
-      - Inhouse oder
+      - Offen
+      - Inhouse
       - Online
