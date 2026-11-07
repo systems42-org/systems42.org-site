@@ -15,7 +15,7 @@
 # date is live on trainings.arc42.org; before that the form would neither
 # preselect the course nor accept the booking.
 - id: seminar-2027-01
-  arc42_id: systems42-jan-2027
+  arc42_id: maispec-jan-2027
   registration_open: false
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
@@ -28,7 +28,7 @@
   short: First seminar, Jan 28–29, 2027 in Vienna
   agenda_url: /training/#agenda
 - id: seminar-2027-02-online
-  arc42_id: systems42-feb-2027-online
+  arc42_id: maispec-feb-2027-en
   registration_open: false
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
