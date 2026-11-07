@@ -26,7 +26,7 @@ toc:
 </div>
 {% endfor %}
 
-Seminar flyer as PDF: [English]({{ '/assets/flyer-MAS-systems42-EN.pdf' | relative_url }}) · [German]({{ '/assets/flyer-MAS-systems42-DE.pdf' | relative_url }})
+Seminar flyer as PDF: [English]({{ '/assets/flyer-MAISPEC-systems42-EN.pdf' | relative_url }}) · [German]({{ '/assets/flyer-MAISPEC-systems42-DE.pdf' | relative_url }})
 
 ### About the seminar {#about-seminar}
 

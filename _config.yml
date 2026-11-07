@@ -27,6 +27,10 @@ plugins:
 
 permalink: pretty
 
+# Flyer PDFs are written into _site after the build (scripts/flyer-pdf.mjs).
+# Keep them across rebuilds, so they survive while the dev server is running.
+keep_files: [".git", ".svn", "assets/flyer-"]
+
 # All content pages live in _pages/ (a collection that outputs pages).
 # Each page sets its own permalink in the front matter.
 collections:
