@@ -54,7 +54,10 @@ try {
   const flyers = (await readdir(join(SITE, "training"))).filter((d) => d.startsWith("flyer-"));
   if (flyers.length === 0) throw new Error("no flyers in _site/training/ – run jekyll build first");
 
-  browser = await chromium.launch();
+  // Without this, Linux Chromium (as on GitHub Actions) snaps glyph advances to
+  // whole pixels at screen resolution, and the PDF shows uneven letter and word
+  // spacing. macOS is not affected.
+  browser = await chromium.launch({ args: ["--font-render-hinting=none"] });
   for (const dir of flyers) {
     const page = await browser.newPage();
     const broken = [];
