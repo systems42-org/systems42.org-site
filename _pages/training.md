@@ -58,4 +58,4 @@ We would love to demonstrate the systems42 approach to your development team. In
 Requirements with req42 and architecture with arc42 are the foundation. Both have long-running seminar programs you can join any time.
 
 - [req42 seminars](https://req42.de)
-- [arc42 training](https://arc42.org/training)
+- [arc42 training](https://trainings.arc42.org/)
