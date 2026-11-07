@@ -10,6 +10,8 @@
 #
 # This mirrors the date in arc42's trainings.yml by hand, on purpose: no build
 # dependency on arc42. Only arc42_id links the two, so keep it in step.
+# arc42's admin app derives it as <course>-<mon>-<year>, plus -en for dates
+# held in English; the course is maispec (booking codes "YY-MM MAISPEC").
 #
 # registration_open shows the Register button. Set it to true only once the
 # date is live on trainings.arc42.org; before that the form would neither
