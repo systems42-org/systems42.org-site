@@ -29,8 +29,14 @@ stop: ## Stop and remove the running dev container
 site: build ## Generate the static site into _site/ (production settings)
 	$(COMPOSE) run --rm -e JEKYLL_ENV=production jekyll bundle exec jekyll build
 
-flyer: site ## Print the flyers (_flyers/) to PDF into _site/assets/ (needs Node; first run: npm install && npx playwright install chromium)
+flyer: site node_modules ## Print the flyers (_flyers/) to PDF into _site/assets/ (needs Node; installs Playwright on first run)
 	npm run flyer
+
+# Playwright and its headless Chromium for `make flyer`; reinstalled when package-lock.json changes.
+node_modules: package-lock.json
+	npm ci
+	npx playwright install --only-shell chromium
+	@touch node_modules
 
 check-links: flyer ## Validate internal links, images and HTML in the built _site (html-proofer)
 	$(COMPOSE) run --rm jekyll bundle exec htmlproofer ./_site --disable-external --allow-hash-href --ignore-urls '/^\/privacy\/|^\/imprint\//'

@@ -10,7 +10,15 @@
 import { createServer } from "node:http";
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
-import { chromium } from "playwright";
+
+// Imported here, not at the top, so a missing install gets a usable message.
+let chromium;
+try {
+  ({ chromium } = await import("playwright"));
+} catch {
+  console.error("Playwright is not installed. Run once in the repository:\n  npm install\n  npx playwright install --only-shell chromium\n(or simply: make flyer)");
+  process.exit(1);
+}
 
 const SITE = "_site";
 const BASEURL = (process.env.BASEURL ?? "").replace(/\/+$/, "");

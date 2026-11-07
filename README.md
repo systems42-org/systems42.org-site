@@ -39,7 +39,7 @@ Colour rule: blue is arc42 and architecture, green is req42 and requirements, th
 
 Each file in `_flyers/` is an A4 page at `/training/flyer-<name>/` (open it in the browser to check the layout). After the Jekyll build, `scripts/flyer-pdf.mjs` prints it with headless Chromium to the path in its `pdf:` front matter, e.g. `/assets/flyer-MAISPEC-systems42-DE.pdf`, and fails if the flyer no longer fits on one page. Shorten the text or tighten `_sass/_flyer-sheet.scss` then.
 
-Locally (needs Node): `npm install`, `npx playwright install chromium` once, then `make flyer`, or `npm run flyer` after any Jekyll build.
+Locally (needs Node): `make flyer` builds the site and installs Playwright on first run. Without make: `npm install` and `npx playwright install --only-shell chromium` once, then `npm run flyer` after any Jekyll build.
 
 The dev server (`make dev`) does not make the PDFs, so the PDF links give 404 there. While it runs, `npm run flyer` in a second terminal writes them into `_site`, where they stay until you run it again (`keep_files` in `_config.yml`). For the layout itself, the HTML pages `/training/flyer-de/` and `/training/flyer-en/` reload live.
 
