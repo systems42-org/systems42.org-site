@@ -1,0 +1,50 @@
+<!doctype html>
+{%- comment -%}
+  One-page A4 seminar flyer. Main column from the page body, sidebar from
+  front matter, course title and dates from _data/events.yml.
+  scripts/flyer-pdf.mjs prints this page to page.pdf.
+{%- endcomment -%}
+{%- assign course = site.data.events | first -%}
+<html lang="{{ page.lang | default: 'de' }}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>{{ course.title }} – Flyer</title>
+  <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/flyer.css' | relative_url }}">
+</head>
+<body class="flyer-screen">
+  {% if page.pdf %}<p class="flyer-download"><a href="{{ page.pdf | relative_url }}">PDF herunterladen</a></p>{% endif %}
+  <div class="sheet">
+    <main class="flyer-main">
+      <img class="flyer-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="systems42">
+      <p class="flyer-kicker">{{ page.kicker }}</p>
+      <h1>{{ course.title }}</h1>
+      <p class="flyer-sub">{{ page.subtitle }}</p>
+      <div class="flyer-body">
+        {{ content }}
+      </div>
+    </main>
+    <aside class="flyer-side">
+      <h2>{{ page.sidebar_title }}</h2>
+      <dl>
+        <dt>Termine</dt>
+        <dd><ul class="flyer-dates">
+          {%- for ev in site.data.events -%}
+          <li><b>{{ ev.day_range | replace: "–", ".–" }}.{{ ev.date_iso | date: "%m.%Y" }}</b><br>{{ ev.where_de | default: ev.where }}</li>
+          {%- endfor -%}
+        </ul></dd>
+        {%- for f in page.facts -%}
+        <dt>{{ f.label }}</dt>
+        <dd>
+          {%- if f.text -%}{{ f.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{%- endif -%}
+          {%- if f.names -%}{% for n in f.names %}<br><b>{{ n }}</b>{% endfor %}{%- endif -%}
+          {%- if f.list -%}<ul>{% for i in f.list %}<li>{{ i }}</li>{% endfor %}</ul>{%- endif -%}
+        </dd>
+        {%- endfor -%}
+      </dl>
+    </aside>
+  </div>
+</body>
+</html>

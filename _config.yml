@@ -33,6 +33,11 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  # Printable flyers: an A4 HTML page each, printed to PDF after the build
+  # by scripts/flyer-pdf.mjs. Not listed in search or the sitemap.
+  flyers:
+    output: true
+    permalink: /training/flyer-:name/
 
 defaults:
   - scope:
@@ -40,6 +45,13 @@ defaults:
       type: pages
     values:
       layout: page
+  - scope:
+      path: ""
+      type: flyers
+    values:
+      layout: flyer
+      search: false
+      sitemap: false
 
 exclude:
   - Makefile
@@ -50,5 +62,8 @@ exclude:
   - LICENSE
   - vendor/
   - node_modules/
+  - package.json
+  - package-lock.json
+  - scripts/
   - .claude/
   - .impeccable/

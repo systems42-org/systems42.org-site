@@ -5,7 +5,7 @@
 SITE_PORT ?= 4242
 COMPOSE := docker compose -f docker/compose.yml
 
-.PHONY: help dev build stop site check-links lock clean install update shell logs
+.PHONY: help dev build stop site flyer check-links lock clean install update shell logs
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -29,7 +29,10 @@ stop: ## Stop and remove the running dev container
 site: build ## Generate the static site into _site/ (production settings)
 	$(COMPOSE) run --rm -e JEKYLL_ENV=production jekyll bundle exec jekyll build
 
-check-links: site ## Validate internal links, images and HTML in the built _site (html-proofer)
+flyer: site ## Print the flyers (_flyers/) to PDF into _site/assets/ (needs Node; first run: npm install && npx playwright install chromium)
+	npm run flyer
+
+check-links: flyer ## Validate internal links, images and HTML in the built _site (html-proofer)
 	$(COMPOSE) run --rm jekyll bundle exec htmlproofer ./_site --disable-external --allow-hash-href --ignore-urls '/^\/privacy\/|^\/imprint\//'
 
 lock: ## (Re)create Gemfile.lock without any local Ruby, using the official ruby image

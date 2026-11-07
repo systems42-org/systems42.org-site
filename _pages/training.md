@@ -25,6 +25,8 @@ toc:
 </div>
 {% endfor %}
 
+[Seminar flyer (PDF, German)](/assets/flyer-MAS-systems42-DE.pdf)
+
 ### Agenda {#agenda}
 
 The detailed agenda will be published here. Expect two days: the spec and the single source of truth, the three loops with your own material, and rules and guardrails for your team.

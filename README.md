@@ -30,10 +30,17 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | Pages | `_pages/*.md`, layout `page`, `permalink:` in the front matter; `toc:` adds the sub-navigation |
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |
+| Seminar flyer (PDF) | `_flyers/de.md` (text, price, sidebar), layout `flyer`, styles `_sass/_flyer-sheet.scss`; title and dates come from `_data/events.yml` |
 | Loop diagrams | `_includes/loops/*.svg` (inlined so they take the page colours); originals in `assets/img/loops/` |
 
 Colour rule: blue is arc42 and architecture, green is req42 and requirements, the gradient marks where both meet.
 
+## Flyer
+
+Each file in `_flyers/` is an A4 page at `/training/flyer-<name>/` (open it in the browser to check the layout). After the Jekyll build, `scripts/flyer-pdf.mjs` prints it with headless Chromium to the path in its `pdf:` front matter, e.g. `/assets/flyer-MAS-systems42-DE.pdf`, and fails if the flyer no longer fits on one page. Shorten the text or tighten `_sass/_flyer-sheet.scss` then.
+
+Locally (needs Node): `npm install`, `npx playwright install chromium` once, then `make flyer`, or `npm run flyer` after any Jekyll build.
+
 ## Deployment
 
-Pushes to `main` run `.github/workflows/pages.yml`, which builds with Jekyll 4 and deploys to GitHub Pages. The custom domain is set in `CNAME`.
+Pushes to `main` run `.github/workflows/pages.yml`, which builds with Jekyll 4, prints the flyers to PDF and deploys to GitHub Pages. The custom domain is set in `CNAME`.

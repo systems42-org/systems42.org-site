@@ -31,6 +31,16 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      # Print the flyers (_flyers/) to PDF into _site. Fails the build, and so
+      # the deploy, if a flyer no longer fits on one A4 page.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps --only-shell chromium
+      - name: Print flyers to PDF
+        run: npm run flyer
       - uses: actions/upload-pages-artifact@v3
 
   deploy:

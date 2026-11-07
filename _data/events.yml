@@ -5,6 +5,7 @@
 # arc42/trainings.arc42.org-site/_data/trainings.yml: the form preselects the
 # course from ?kurs=<arc42_id>, and the service accepts only booking codes it
 # finds in that site's feed. The title stays English on every page.
+# where_de is the German line for the printed flyer (_flyers/de.md).
 #
 # registration_open shows the Register button. Set it to true only once the
 # date is live on trainings.arc42.org; before that the form would neither
@@ -17,6 +18,7 @@
   day_range: 28–29
   month: January 2027
   where: Vienna, held in German
+  where_de: Wien, auf Deutsch
   date_iso: 2027-01-28
   short: First seminar, Jan 28–29, 2027 in Vienna
   agenda_url: /training/#agenda
@@ -28,6 +30,7 @@
   day_range: 2–3
   month: February 2027
   where: Online, held in English (time zone CET, Vienna)
+  where_de: Online, auf Englisch (MEZ)
   date_iso: 2027-02-02
   short: Online seminar, Feb 2–3, 2027
   agenda_url: /training/#agenda
