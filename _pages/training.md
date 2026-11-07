@@ -4,6 +4,7 @@ lede: Seminars and in-house consulting for agentic engineering with systems42.
 permalink: /training/
 toc:
   - {title: Seminar, id: seminar}
+  - {title: About the seminar, id: about-seminar}
   - {title: In-house, id: in-house}
   - {title: 42 family seminars, id: family-seminars}
 ---
@@ -16,18 +17,17 @@ toc:
   <div>
     <h3>{{ ev.title }}</h3>
     <p>{{ ev.subtitle }}</p>
+    {% if ev.trainers %}<p>With {{ ev.trainers | join: " and " }}</p>{% endif %}
     <p><b>{{ ev.where }}</b></p>
     <div class="cta">
       {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
-      <a class="btn btn-outline" href="#agenda">Agenda</a>
+      <a class="btn btn-outline" href="#about-seminar">About the seminar</a>
+      {% assign flyer = site.flyers | where: "lang", ev.lang | first %}
+      {% if flyer %}<a class="btn btn-outline" href="{{ flyer.pdf | relative_url }}" hreflang="{{ ev.lang }}" download>Flyer (PDF, {% if ev.lang == "de" %}German{% else %}English{% endif %})</a>{% endif %}
     </div>
   </div>
 </div>
 {% endfor %}
-
-### Agenda {#agenda}
-
-The detailed agenda will be published here. Expect two days: the spec and the single source of truth, the three loops with your own material, and rules and guardrails for your team.
 
 ### Registration {#register}
 
@@ -40,6 +40,15 @@ The dates are also listed with all other courses at [trainings.arc42.org](https:
 Registration opens shortly through the training site of our sister project arc42. Until then, write to us and we put you on the list.
 {% endif %}
 
+## About the seminar {#about-seminar}
+
+{% assign course = site.data.course.en %}
+{{ course.intro | markdownify }}
+
+<dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
+
+{% include course-agenda.html course=course level=3 topics_id="agenda" %}
+
 ## In-house {#in-house}
 
 We would love to demonstrate the systems42 approach to your development team. In German or English. Call us for in-house consulting and seminars.
@@ -49,4 +58,4 @@ We would love to demonstrate the systems42 approach to your development team. In
 Requirements with req42 and architecture with arc42 are the foundation. Both have long-running seminar programs you can join any time.
 
 - [req42 seminars](https://req42.de)
-- [arc42 training](https://arc42.org/training)
+- [arc42 training](https://trainings.arc42.org/)

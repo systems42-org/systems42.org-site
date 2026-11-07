@@ -1,0 +1,15 @@
+{%- comment -%}
+  Key facts of the seminar as <dt>/<dd> pairs (wrap in a <dl>), from
+  _data/course/<lang>.yml. A fact with `only: flyer` or `only: web` appears
+  only in that medium.
+  Params: course (a _data/course entry), medium ("flyer" or "web")
+{%- endcomment -%}
+{%- for f in include.course.facts -%}
+{%- if f.only and f.only != include.medium -%}{%- continue -%}{%- endif -%}
+<dt>{{ f.label }}</dt>
+<dd>
+  {%- if f.text -%}{{ f.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{%- endif -%}
+  {%- if f.names -%}{% for n in f.names %}<br><b>{{ n }}</b>{% endfor %}{%- endif -%}
+  {%- if f.list -%}<ul>{% for i in f.list %}<li>{{ i }}</li>{% endfor %}</ul>{%- endif -%}
+</dd>
+{%- endfor -%}

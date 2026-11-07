@@ -1,10 +1,15 @@
 # Build the Jekyll site and deploy it to GitHub Pages.
 # Repository settings > Pages > Build and deployment > Source must be "GitHub Actions".
+# Pull requests run the build only (site + flyer PDFs) and never deploy.
+# The weekly run rebuilds main so that past dates drop out of the flyers.
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: ["main"]
+  pull_request:
+  schedule:
+    - cron: "0 5 * * 1"   # Mondays 05:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -12,9 +17,10 @@ permissions:
   pages: write
   id-token: write
 
+# Deploys queue one after another; a PR build only replaces its own older run.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -31,9 +37,23 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      # Print the flyers (_flyers/) to PDF into _site. Fails the build, and so
+      # the deploy, if a flyer no longer fits on one A4 page.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps --only-shell chromium
+      - name: Print flyers to PDF
+        run: npm run flyer
+        env:
+          BASEURL: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

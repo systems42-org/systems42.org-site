@@ -1,0 +1,58 @@
+<!doctype html>
+{%- comment -%}
+  One-page A4 seminar flyer. Text from _data/course/<lang>.yml (shared with
+  /training/), dates from _data/events.yml (upcoming ones only, without
+  trainer names: the sidebar has no room for them). The flyer's own front
+  matter holds only what exists on the flyer alone.
+  scripts/flyer-pdf.mjs prints this page to the path in `pdf:`.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: 'de' -%}
+{%- assign course = site.data.course[lang] -%}
+{%- assign today = 'now' | date: '%Y-%m-%d' -%}
+<html lang="{{ lang }}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>{{ course.title }} – Flyer</title>
+  <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/flyer.css' | relative_url }}">
+</head>
+<body class="flyer-screen">
+  <p class="flyer-download"><a href="{{ page.pdf | relative_url }}">{{ page.download_label }}</a></p>
+  <div class="sheet">
+    <main class="flyer-main">
+      <img class="flyer-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="systems42">
+      <p class="flyer-kicker">{{ course.kicker }}</p>
+      <h1>{{ course.title }}</h1>
+      <p class="flyer-sub">{{ course.subtitle }}</p>
+      <div class="flyer-body">
+        {{ course.intro | markdownify }}
+        {% include course-agenda.html course=course level=2 %}
+        <h2>{{ page.more_info_label }}</h2>
+        <p><a href="https://systems42.org/training/">www.systems42.org/training</a></p>
+      </div>
+    </main>
+    <aside class="flyer-side">
+      <h2>{{ course.facts_heading }}</h2>
+      <dl>
+        {%- capture dates -%}
+          {%- for ev in site.data.events -%}
+          {%- assign start = ev.date_iso | date: '%Y-%m-%d' -%}
+          {%- if start < today -%}{%- continue -%}{%- endif -%}
+          <li><b>
+            {%- if lang == 'de' -%}{{ ev.day_range | replace: "–", ".–" }}.{{ ev.date_iso | date: "%m.%Y" }}
+            {%- else -%}{{ ev.day_range }} {{ ev.month }}{%- endif -%}
+          </b><br>{% if lang == 'de' %}{{ ev.where_de | default: ev.where }}{% else %}{{ ev.where }}{% endif %}</li>
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if dates != "" -%}
+        <dt>{{ course.dates_label }}</dt>
+        <dd><ul class="flyer-dates">{{ dates }}</ul></dd>
+        {%- endif -%}
+        {% include course-facts.html course=course medium="flyer" %}
+      </dl>
+    </aside>
+  </div>
+</body>
+</html>

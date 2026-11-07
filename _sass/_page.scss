@@ -11,6 +11,13 @@
 .article h2{margin-top:2.2em;padding-top:.2em}
 .article>h2:first-child{margin-top:0}
 .article h3{margin-top:1.6em;font-family:var(--body);font-weight:800;font-size:1.05rem}
+.article h4{margin-top:1.1em;font-size:1rem;font-weight:700;color:var(--arc-700)}
+.article li>ul{margin-top:.35em}
+/* Seminar key facts on /training/ (_includes/course-facts.html) */
+.facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 20px;margin:1.2em 0 0;max-width:68ch}
+.facts dt{font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:.2em}
+.facts dd{margin:0}
+.facts ul{margin:0;padding-left:1.1em}
 .article p,.article ul,.article ol{margin-top:.8em;max-width:68ch}
 .article ul,.article ol{padding-left:1.3em}
 .article li+li{margin-top:.35em}

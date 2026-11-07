@@ -1,0 +1,82 @@
+# Seminar description, English. Same keys as de.yml (see the notes there).
+# Read by the English flyer (_flyers/en.md) and the "About the seminar" section on /training/.
+# Text as in flyer-MAS-systems42-EN-V7.docx (the Word version).
+
+title: Mastering AI-Driven Specification
+kicker: Hands-on workshop · 2 days
+subtitle: One specification for requirements and architecture as the foundation for agentic software engineering
+
+intro: |
+  This hands-on workshop brings product owners, business analysts, requirements engineers, architects and AI agents together at one table. Supported by AI agents, you learn to create and refine a specification that can serve as the basis for AI code generation and testing. Our approach, systems42, combines good practices from the proven req42 and arc42 approaches – open source and pragmatic.
+
+  Working with AI in several short iterations, you build a systems42 specification for a case study: from vision and goals, via user stories, to concrete, testable specifications. You review and extend this spec iteratively and incrementally.
+
+  To finish, you see live how an AI agent generates code and tests from your specification – traceable back to your requirements.
+
+topics_heading: Topics
+days:
+  - title: Day 1 – Developing the core spec with agentic engineering
+    topics:
+      - text: Introduction
+        sub:
+          - Why good specs matter more than they used to
+          - What is systems42?
+      - Goals, scope & stakeholders
+      - Capturing raw input with AI
+      - Detailing functional requirements
+      - Developing a glossary & quality scenarios
+      - Creating a story map & prioritising pilot stories
+  - title: Day 2 – Spec-ready stories & live demo
+    topics:
+      - Specifying acceptance criteria for requirements
+      - Solution strategy, architecture & ADRs
+      - "Inspect & Clarify: reviewing and sharpening the spec"
+      - "Live demo: the agent generates code & tests from your spec"
+      - "Transfer: the spec workflow in your own team"
+
+takeaways_heading: What you take away
+takeaways:
+  - A systems42 specification in your repository
+  - Spec-ready requirements with acceptance criteria
+  - Prompt templates & rules for AI-supported specification
+  - "Traceability: requirement › spec › code › test"
+  - An agentic workflow with Capture, Inspect and Clarify loops
+
+prerequisites_heading: Prerequisites
+prerequisites: Some experience with AI assistants (e.g. Claude, ChatGPT). No programming skills required. Bring your laptop and join in – or simply follow the results.
+
+# Key facts: the flyer sidebar and the "at a glance" list on the website.
+# `only: flyer` or `only: web` limits a fact to one of the two.
+facts_heading: 2-day hands-on workshop
+dates_label: Dates
+facts:
+  - label: Duration
+    text: 2 days
+  - label: Participants
+    text: 6–12 people
+  - label: Price
+    text: €1,500 per person, €1,350 for alumni or early-bird bookings (see registration)
+  - label: Registration
+    only: flyer   # on the website the Registration section says this
+    text: "[www.systems42.org/training](https://systems42.org/training/) or by email to [info@systems42.org](mailto:info@systems42.org)"
+  - label: Language
+    text: German / English
+  - label: Who it is for
+    list:
+      - Product owners & business analysts
+      - Software architects & tech leads
+      - Requirements engineers & developers
+      - Testers & QA engineers
+      - Teams that want to steer AI agents through good specifications
+      - Organisations that want to work in an agentic, AI-supported way for the long term
+  - label: Trainers
+    text: The creators of systems42
+    names:
+      - Peter Hruschka
+      - Gernot Starke
+      - Peter Gerstbach
+  - label: Format
+    list:
+      - Public
+      - In-house
+      - Online
