@@ -41,6 +41,8 @@ jobs:
       - run: npx playwright install --with-deps --only-shell chromium
       - name: Print flyers to PDF
         run: npm run flyer
+        env:
+          BASEURL: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
 
   deploy:
