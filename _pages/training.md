@@ -21,12 +21,12 @@ toc:
     <div class="cta">
       {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
       <a class="btn btn-outline" href="#about-seminar">About the seminar</a>
+      {% assign flyer = site.flyers | where: "lang", ev.lang | first %}
+      {% if flyer %}<a class="btn btn-outline" href="{{ flyer.pdf | relative_url }}" hreflang="{{ ev.lang }}" download>Flyer (PDF, {% if ev.lang == "de" %}German{% else %}English{% endif %})</a>{% endif %}
     </div>
   </div>
 </div>
 {% endfor %}
-
-Seminar flyer as PDF: [English]({{ '/assets/flyer-MAISPEC-systems42-EN.pdf' | relative_url }}) · [German]({{ '/assets/flyer-MAISPEC-systems42-DE.pdf' | relative_url }})
 
 ### About the seminar {#about-seminar}
 
