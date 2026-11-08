@@ -50,7 +50,8 @@ Registration opens shortly through the training site of our sister project arc42
 
 {% include course-agenda.html course=course level=3 topics_id="agenda" %}
 
-## Über das Seminar {#about-seminar-de}
+## Über das Seminar
+{: #about-seminar-de lang="de"}
 
 {% assign course = site.data.course.de %}
 <div lang="de" markdown="1">
