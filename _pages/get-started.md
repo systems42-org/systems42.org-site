@@ -5,7 +5,7 @@ permalink: /get-started/
 toc:
   - {title: Status, id: status}
   - {title: What you will find here, id: what-you-will-find-here}
-  - {title: Experiment with us, id: experiment-with-us}
+  - {title: Engineer with us, id: engineer-with-us}
 ---
 
 ## Stay tuned {#status}
@@ -21,8 +21,8 @@ We are currently testing our approach with many examples. As soon as we have sol
 <li><strong>Worked examples</strong>Real projects we ran through the cycle, with their specs and findings.</li>
 </ol>
 
-## Experiment with us {#experiment-with-us}
+## Engineer with us {#engineer-with-us}
 
-Until then, visit our first seminar on January 28–29, 2027 in Vienna (or online on February 2–3, 2027) and experiment with us.
+Until the release, the fastest way in is our seminar: January 28–29, 2027 in Vienna, or online on February 2–3. In two days you specify a real case study with AI agents and watch an agent generate code and tests from your spec.
 
 <p><a class="btn btn-blue" href="{{ '/training/' | relative_url }}">See the seminar</a></p>
