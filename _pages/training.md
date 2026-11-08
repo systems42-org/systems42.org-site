@@ -5,6 +5,7 @@ permalink: /training/
 toc:
   - {title: Seminar, id: seminar}
   - {title: About the seminar, id: about-seminar}
+  - {title: Über das Seminar (Deutsch), id: about-seminar-de}
   - {title: In-house, id: in-house}
   - {title: 42 family seminars, id: family-seminars}
 ---
@@ -16,14 +17,14 @@ toc:
   <div class="date"><b>{{ ev.day_range }}</b><span>{{ ev.month }}</span></div>
   <div>
     <h3>{{ ev.title }}</h3>
-    <p>{{ ev.subtitle }}</p>
+    {% if ev.lang == "de" %}<p lang="de">{{ site.data.course.de.subtitle }}</p>{% else %}<p>{{ ev.subtitle }}</p>{% endif %}
     {% if ev.trainers %}<p>With {{ ev.trainers | join: " and " }}</p>{% endif %}
     <p><b>{{ ev.where }}</b></p>
     <div class="cta">
       {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
-      <a class="btn btn-outline" href="#about-seminar">About the seminar</a>
+      {% if ev.lang == "de" %}<a class="btn btn-outline" href="#about-seminar-de" hreflang="de" lang="de">Über das Seminar</a>{% else %}<a class="btn btn-outline" href="#about-seminar">About the seminar</a>{% endif %}
       {% assign flyer = site.flyers | where: "lang", ev.lang | first %}
-      {% if flyer %}<a class="btn btn-outline" href="{{ flyer.pdf | relative_url }}" hreflang="{{ ev.lang }}" download>Flyer (PDF, {% if ev.lang == "de" %}German{% else %}English{% endif %})</a>{% endif %}
+      {% if flyer %}{% capture flyer_label %}Flyer (PDF, {% if ev.lang == "de" %}German{% else %}English{% endif %}){% endcapture %}<a class="btn btn-outline btn-icon" href="{{ flyer.pdf | relative_url }}" hreflang="{{ ev.lang }}" download data-tip="{{ flyer_label }}" aria-label="{{ flyer_label }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></a>{% endif %}
     </div>
   </div>
 </div>
@@ -48,6 +49,17 @@ Registration opens shortly through the training site of our sister project arc42
 <dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
 
 {% include course-agenda.html course=course level=3 topics_id="agenda" %}
+
+## Über das Seminar {#about-seminar-de}
+
+{% assign course = site.data.course.de %}
+<div lang="de" markdown="1">
+{{ course.intro | markdownify }}
+
+<dl class="facts">{% include course-facts.html course=course medium="web" %}</dl>
+
+{% include course-agenda.html course=course level=3 topics_id="agenda-de" %}
+</div>
 
 ## In-house {#in-house}
 

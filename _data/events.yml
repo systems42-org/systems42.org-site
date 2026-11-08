@@ -20,7 +20,7 @@
 # preselect the course nor accept the booking.
 - id: seminar-2027-01
   arc42_id: maispec-jan-2027
-  registration_open: false
+  registration_open: true
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
@@ -34,7 +34,7 @@
   agenda_url: /training/#agenda
 - id: seminar-2027-02-online
   arc42_id: maispec-feb-2027-en
-  registration_open: false
+  registration_open: true
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
