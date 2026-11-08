@@ -19,4 +19,4 @@ Over more than 20 years we have created pragmatic open-source tools to support y
 
 ## Contact {#contact}
 
-Details to follow. Until then, use the contact pages of [req42.de](https://req42.de) and [arc42.org](https://arc42.org).
+Questions about systems42, the seminars or in-house consulting? Write to us at [info@systems42.org](mailto:info@systems42.org).
