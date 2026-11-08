@@ -25,4 +25,4 @@ We are currently testing our approach with many examples. As soon as we have sol
 
 Until the release, the fastest way in is our seminar: January 28–29, 2027 in Vienna, or online on February 2–3. In two days you specify a real case study with AI agents and watch an agent generate code and tests from your spec.
 
-<p><a class="btn btn-blue" href="{{ '/training/' | relative_url }}">See the seminar</a></p>
+<p><a class="btn btn-blue" href="{{ '/training/' | relative_url }}">Join the seminar</a></p>
