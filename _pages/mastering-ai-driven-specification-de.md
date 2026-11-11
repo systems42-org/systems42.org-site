@@ -11,6 +11,7 @@ seo_title: "Mastering AI-Driven Specification: Seminar in Wien (Deutsch)"
 ---
 
 {% assign course = site.data.course.de %}
+{% for ev in site.data.events %}{% if ev.lang == "de" %}{% include event-jsonld.html ev=ev %}{% endif %}{% endfor %}
 <div lang="de" markdown="1">
 
 <p><a href="{{ '/training/' | relative_url }}#seminar">← Alle Termine</a></p>

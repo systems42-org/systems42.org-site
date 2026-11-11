@@ -15,12 +15,16 @@
 # arc42's admin app derives it as <course>-<mon>-<year>, plus -en for dates
 # held in English; the course is maispec (booking codes "YY-MM MAISPEC").
 #
+# price_eur is the regular price per person (schema.org offer, see
+# _includes/event-jsonld.html); the website text names the discounts.
+#
 # registration_open shows the Register button. Set it to true only once the
 # date is live on trainings.arc42.org; before that the form would neither
 # preselect the course nor accept the booking.
 - id: seminar-2027-01
   arc42_id: maispec-jan-2027
   registration_open: true
+  price_eur: 1500
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
@@ -35,6 +39,7 @@
 - id: seminar-2027-02-online
   arc42_id: maispec-feb-2027-en
   registration_open: true
+  price_eur: 1500
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on

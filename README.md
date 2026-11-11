@@ -50,7 +50,7 @@ Things that are deliberately provisional. Check this list before the public rele
 - **The logo is a placeholder.** The final logo is still in progress. When it exists, replace `assets/img/logo.svg` and regenerate everything derived from it: `logo-512.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` and `og-image.png` (the link preview image for LinkedIn, Slack and similar, 1200x630, logo centred on the logo's background colour).
 - **`/publications/` and `/blog/` are set to `noindex` and are not in the sitemap**, because they have no content yet and search engines would treat them as thin pages. As soon as a page has real content, remove `noindex: true` and `sitemap: false` from its front matter (`_pages/publications.md`, `_pages/blog.md`). Otherwise it never shows up in search. `/imprint/`, `/privacy/` and `/search/` are also left out of the sitemap, but on purpose and for good.
 - **Imprint and privacy** still say "Details to follow".
-- **Structured data** (schema.org `Course` / `Event` for the seminars) is not done yet.
+- **Structured data** (schema.org `Event` as JSON-LD, `_includes/event-jsonld.html`, fed by `_data/events.yml`) is in place on /training/ and the two seminar pages. Still open: the venue in Vienna (only city and country so far, add name and street address once known), start times, and the discounted price (the offer carries only `price_eur`). Check after each change with Google's Rich Results Test.
 
 ## Deployment
 

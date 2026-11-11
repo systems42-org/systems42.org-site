@@ -11,6 +11,7 @@ seo_title: "Mastering AI-Driven Specification: Seminar, Online"
 ---
 
 {% assign course = site.data.course.en %}
+{% for ev in site.data.events %}{% if ev.lang == "en" %}{% include event-jsonld.html ev=ev %}{% endif %}{% endfor %}
 <div markdown="1">
 
 <p><a href="{{ '/training/' | relative_url }}#seminar">← All seminar dates</a></p>

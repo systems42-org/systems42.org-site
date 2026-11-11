@@ -1,0 +1,40 @@
+{%- comment -%}
+  schema.org Event as JSON-LD for one entry of _data/events.yml, so search
+  engines can show the seminar dates. Param: ev. Output has no blank lines
+  (kramdown would end its HTML block there).
+  Online dates use VirtualLocation, others a Place in the city before the comma.
+  The venue is not known yet: Place has only city and country.
+{%- endcomment -%}
+{%- assign ev = include.ev -%}
+{%- assign days = ev.day_range | split: "–" -%}
+{%- assign d_end = "0" | append: days[1] | slice: -2, 2 -%}
+{%- assign end_iso = ev.date_iso | date: "%Y-%m-" | append: d_end -%}
+{%- assign page_url = '/training/mastering-ai-driven-specification/' -%}
+{%- if ev.lang == "de" -%}{%- assign page_url = '/training/mastering-ai-driven-specification-de/' -%}{%- endif -%}
+{%- assign city = ev.where | split: "," | first -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ ev.title | jsonify }},
+  "description": {% if ev.lang == "de" %}{{ site.data.course.de.subtitle | jsonify }}{% else %}{{ ev.subtitle | jsonify }}{% endif %},
+  "startDate": {{ ev.date_iso | jsonify }},
+  "endDate": {{ end_iso | jsonify }},
+  "inLanguage": {{ ev.lang | jsonify }},
+  "eventStatus": "https://schema.org/EventScheduled",
+  {%- if city == "Online" %}
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "location": {"@type": "VirtualLocation", "url": {{ page_url | absolute_url | jsonify }}},
+  {%- else %}
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {"@type": "Place", "name": {{ city | jsonify }}, "address": {"@type": "PostalAddress", "addressLocality": {{ city | jsonify }}, "addressCountry": "AT"}},
+  {%- endif %}
+  "image": {{ '/assets/img/og-image.png' | absolute_url | jsonify }},
+  "url": {{ page_url | absolute_url | jsonify }},
+  "organizer": {"@type": "Organization", "name": "systems42", "url": {{ site.url | jsonify }}},
+  "performer": [{% for t in ev.trainers %}{"@type": "Person", "name": {{ t | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+  {%- if ev.registration_open and ev.price_eur %},
+  "offers": {"@type": "Offer", "price": {{ ev.price_eur | jsonify }}, "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}"}
+  {%- endif %}
+}
+</script>

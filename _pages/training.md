@@ -33,6 +33,8 @@ seo_title: "Training: Mastering AI-Driven Specification"
 </div>
 {% endfor %}
 
+{% for ev in site.data.events %}{% include event-jsonld.html ev=ev %}{% endfor %}
+
 ### Registration {#register}
 
 {% assign open_events = site.data.events | where: "registration_open", true %}
