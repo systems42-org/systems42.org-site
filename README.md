@@ -26,7 +26,7 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | The 18 spec sections | `_data/sections.yml` |
 | Blog posts | `_posts/YYYY-MM-DD-slug.md`, layout `post`; `_drafts/` holds an example |
 | Search | `search.json` (built by Jekyll) + lunr.js in `assets/js/`; Cmd-K / Ctrl-K or the magnifier opens it; `/search/` shows all results |
-| Logo | `assets/img/logo.svg` (vector); PNG/ICO icons are generated from it |
+| Logo | `assets/img/logo.svg` (vector); PNG/ICO icons and the link preview image `og-image.png` (1200x630) are generated from it. **Placeholder, see Open points** |
 | Pages | `_pages/*.md`, layout `page`, `permalink:` in the front matter; `toc:` adds the sub-navigation |
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |
@@ -42,6 +42,15 @@ Each file in `_flyers/` is an A4 page at `/training/flyer-<name>/` (open it in t
 Locally (needs Node): `make flyer` builds the site and installs Playwright on first run. Without make: `npm install` and `npx playwright install --only-shell chromium` once, then `npm run flyer` after any Jekyll build.
 
 The dev server (`make dev`) does not make the PDFs, so the PDF links give 404 there. While it runs, `npm run flyer` in a second terminal writes them into `_site`, where they stay until you run it again (`keep_files` in `_config.yml`). For the layout itself, the HTML pages `/training/flyer-de/` and `/training/flyer-en/` reload live.
+
+## Open points
+
+Things that are deliberately provisional. Check this list before the public release.
+
+- **The logo is a placeholder.** The final logo is still in progress. When it exists, replace `assets/img/logo.svg` and regenerate everything derived from it: `logo-512.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` and `og-image.png` (the link preview image for LinkedIn, Slack and similar, 1200x630, logo centred on the logo's background colour).
+- **`/publications/` and `/blog/` are set to `noindex` and are not in the sitemap**, because they have no content yet and search engines would treat them as thin pages. As soon as a page has real content, remove `noindex: true` and `sitemap: false` from its front matter (`_pages/publications.md`, `_pages/blog.md`). Otherwise it never shows up in search. `/imprint/`, `/privacy/` and `/search/` are also left out of the sitemap, but on purpose and for good.
+- **Imprint and privacy** still say "Details to follow".
+- **Structured data** (schema.org `Course` / `Event` for the seminars) is not done yet.
 
 ## Deployment
 
