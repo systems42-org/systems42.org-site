@@ -31,7 +31,7 @@
   start_time: "10:00"
   end_time: "16:30"
   utc_offset: "+01:00"
-  venue: {name: Design Thinking Space Wien, street: Absberggasse 27, postal_code: "1100", city: Wien, country: AT, lat: 48.171331, lng: 16.3908844}
+  venue: {name: Design Thinking Space, street: Absberggasse 27/7/13, postal_code: "1100", city: Wien, country: AT, lat: 48.171331, lng: 16.3908844}
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
