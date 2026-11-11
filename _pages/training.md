@@ -16,7 +16,7 @@ toc:
   <div class="date"><b>{{ ev.day_range }}</b><span>{{ ev.month }}</span></div>
   <div>
     {% assign where_clean = ev.where | replace: ", held in German", "" | replace: ", held in English", "" %}{% assign where_parts = where_clean | split: " (" %}
-    <p class="badges"><span class="lang-badge lang-{{ ev.lang }}">{% if ev.lang == "de" %}German{% else %}English{% endif %}</span><span class="lang-badge place-badge">{{ where_parts[0] }}</span></p>
+    <p class="badges"><span class="lang-badge lang-{{ ev.lang }}">{% if ev.lang == "de" %}German{% else %}English{% endif %}</span>{% assign place = where_parts[0] %}{% include place-badge.html place=place %}</p>
     <h3>{{ ev.title }}</h3>
     {% if ev.lang == "de" %}<p lang="de">{{ site.data.course.de.subtitle }}</p>{% else %}<p>{{ ev.subtitle }}</p>{% endif %}
     {% if ev.trainers %}<p>With {{ ev.trainers | join: " and " }}</p>{% endif %}

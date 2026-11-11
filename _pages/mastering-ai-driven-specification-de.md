@@ -14,7 +14,7 @@ alternates:
 
 <p><a href="{{ '/training/' | relative_url }}#seminar">← Alle Termine</a></p>
 
-<p class="badges"><span class="lang-badge lang-de">Deutsch</span>{% for ev in site.data.events %}{% if ev.lang == "de" %}{% assign wp = ev.where_de | replace: ", auf Deutsch", "" | replace: ", auf Englisch", "" | split: " (" %}<span class="lang-badge place-badge">{{ wp[0] }}</span>{% endif %}{% endfor %}<a class="lang-switch" href="{{ '/training/mastering-ai-driven-specification/' | relative_url }}" hreflang="en" lang="en">This seminar in English →</a></p>
+<p class="badges"><span class="lang-badge lang-de">Deutsch</span>{% for ev in site.data.events %}{% if ev.lang == "de" %}{% assign wp = ev.where_de | replace: ", auf Deutsch", "" | replace: ", auf Englisch", "" | split: " (" %}{% assign place = wp[0] %}{% include place-badge.html place=place %}{% endif %}{% endfor %}<a class="lang-switch" href="{{ '/training/mastering-ai-driven-specification/' | relative_url }}" hreflang="en" lang="en">This seminar in English →</a></p>
 
 {{ course.intro | markdownify }}
 

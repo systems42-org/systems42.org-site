@@ -72,3 +72,6 @@
 .place-badge{border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
 .article .badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:1.2em 0 1.2em}.article .badges .lang-badge{margin-bottom:0}
 .lang-switch{margin-left:6px;font-size:.9rem;font-weight:600}
+.place-badge{display:inline-flex;align-items:center;gap:6px}
+.pill-icon{display:block;flex:none}
+.pill-icon rect:first-child{stroke:var(--line-strong);stroke-width:.08}

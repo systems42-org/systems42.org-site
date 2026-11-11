@@ -1,0 +1,12 @@
+{%- comment -%}
+  Place pill of a seminar date: Austrian flag for Vienna, globe for Online.
+  Inline SVG on purpose (flag emoji show as letters on Windows). Decorative:
+  the text carries the meaning. Params: place (text, e.g. "Vienna", "Wien", "Online")
+{%- endcomment -%}
+<span class="lang-badge place-badge">
+{%- if include.place == "Vienna" or include.place == "Wien" -%}
+<svg class="pill-icon" width="16" height="11" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="3" height=".6667" fill="#ed2939"/><rect y="1.3333" width="3" height=".6667" fill="#ed2939"/></svg>
+{%- elsif include.place == "Online" -%}
+<svg class="pill-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+{%- endif -%}
+{{ include.place }}</span>
