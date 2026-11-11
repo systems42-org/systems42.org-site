@@ -31,7 +31,7 @@
   where_de: Wien, auf Deutsch
   date_iso: 2027-01-28
   short: First seminar, Jan 28–29, 2027 in Vienna
-  agenda_url: /training/#agenda
+  agenda_url: /training/maispec-de/#agenda
 - id: seminar-2027-02-online
   arc42_id: maispec-feb-2027-en
   registration_open: true
@@ -45,4 +45,4 @@
   where_de: Online, auf Englisch (MEZ)
   date_iso: 2027-02-02
   short: Online seminar, Feb 2–3, 2027
-  agenda_url: /training/#agenda
+  agenda_url: /training/maispec/#agenda
