@@ -3,7 +3,7 @@
   engines can show the seminar dates. Param: ev. Output has no blank lines
   (kramdown would end its HTML block there).
   Online dates use VirtualLocation, others a Place in the city before the comma.
-  The venue is not known yet: Place has only city and country.
+  Times come from start_time / end_time / utc_offset of the event, the venue from its venue map.
 {%- endcomment -%}
 {%- assign ev = include.ev -%}
 {%- assign days = ev.day_range | split: "–" -%}
@@ -18,8 +18,8 @@
   "@type": "Event",
   "name": {{ ev.title | jsonify }},
   "description": {% if ev.lang == "de" %}{{ site.data.course.de.subtitle | jsonify }}{% else %}{{ ev.subtitle | jsonify }}{% endif %},
-  "startDate": {{ ev.date_iso | jsonify }},
-  "endDate": {{ end_iso | jsonify }},
+  "startDate": {{ ev.date_iso | append: "T" | append: ev.start_time | append: ":00" | append: ev.utc_offset | jsonify }},
+  "endDate": {{ end_iso | append: "T" | append: ev.end_time | append: ":00" | append: ev.utc_offset | jsonify }},
   "inLanguage": {{ ev.lang | jsonify }},
   "eventStatus": "https://schema.org/EventScheduled",
   {%- if city == "Online" %}
@@ -27,7 +27,7 @@
   "location": {"@type": "VirtualLocation", "url": {{ page_url | absolute_url | jsonify }}},
   {%- else %}
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {"@type": "Place", "name": {{ city | jsonify }}, "address": {"@type": "PostalAddress", "addressLocality": {{ city | jsonify }}, "addressCountry": "AT"}},
+  "location": {"@type": "Place", "name": {{ ev.venue.name | default: city | jsonify }}, "address": {"@type": "PostalAddress", "streetAddress": {{ ev.venue.street | jsonify }}, "postalCode": {{ ev.venue.postal_code | jsonify }}, "addressLocality": {{ ev.venue.city | default: city | jsonify }}, "addressCountry": {{ ev.venue.country | default: "AT" | jsonify }}}{% if ev.venue.lat %}, "geo": {"@type": "GeoCoordinates", "latitude": {{ ev.venue.lat | jsonify }}, "longitude": {{ ev.venue.lng | jsonify }}}{% endif %}},
   {%- endif %}
   "image": {{ '/assets/img/og-image.png' | absolute_url | jsonify }},
   "url": {{ page_url | absolute_url | jsonify }},

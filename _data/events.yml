@@ -15,6 +15,9 @@
 # arc42's admin app derives it as <course>-<mon>-<year>, plus -en for dates
 # held in English; the course is maispec (booking codes "YY-MM MAISPEC").
 #
+# start_time is the first day's start, end_time the last day's end (24h, local
+# time); utc_offset is Vienna's offset on those dates: +01:00 in winter, +02:00
+# in summer. venue is only for events on site (schema.org Place).
 # price_eur is the regular price per person (schema.org offer, see
 # _includes/event-jsonld.html); the website text names the discounts.
 #
@@ -25,6 +28,10 @@
   arc42_id: maispec-jan-2027
   registration_open: true
   price_eur: 1500
+  start_time: "10:00"
+  end_time: "16:30"
+  utc_offset: "+01:00"
+  venue: {name: Design Thinking Space Wien, street: Absberggasse 27, postal_code: "1100", city: Wien, country: AT, lat: 48.171331, lng: 16.3908844}
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
@@ -40,6 +47,9 @@
   arc42_id: maispec-feb-2027-en
   registration_open: true
   price_eur: 1500
+  start_time: "10:00"
+  end_time: "16:30"
+  utc_offset: "+01:00"
   title: Mastering AI-Driven Specification
   trainers: [Peter Hruschka, Peter Gerstbach]
   subtitle: One spec for requirements and architecture – ready for AI agents to build on
