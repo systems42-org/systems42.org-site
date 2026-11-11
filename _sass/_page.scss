@@ -34,9 +34,11 @@
 
 .event{display:grid;grid-template-columns:auto 1fr;gap:24px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px 24px;max-width:760px;box-shadow:var(--shadow);margin-top:1em}
 /* min-width keeps the text column aligned across cards: "28–29" is wider than "2–3". */
-.event .date{font-family:var(--display);line-height:1;text-align:center;padding:6px 16px;border-right:1px solid var(--line);min-width:10.5rem}
-.event .date b{display:block;font-size:2.6rem;font-weight:400}
-.event .date span{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:6px}
+.event .date{font-family:var(--display);line-height:1;text-align:center;padding:6px 16px;border-right:1px solid var(--line);min-width:12rem}
+.event .date b{display:block;font-size:2rem;font-weight:400;margin-top:4px}
+.event .date > span{display:block;font-family:var(--body)}
+.event .date .days,.event .date .year{font-size:1.1rem;font-weight:700;color:var(--text)}
+.event .date .year{margin-top:4px}
 .event h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0}
 .event p{margin-top:.5em;color:var(--muted)}
 .event .cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
@@ -65,13 +67,13 @@
 .post-list a{font-family:var(--display);font-size:1.35rem;text-decoration:none}
 .post-list p{margin-top:4px;color:var(--muted)}
 .post-back{margin-top:2.5em}
-.lang-badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:8px}
-.lang-de{background:var(--arc-700);color:#fff}
-.lang-en{background:var(--req-400);color:var(--ink)}
-.event .badges{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}.event .badges .lang-badge{margin-bottom:0}
+.lang-badge{font-family:var(--body);display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.lang-de,.lang-en{background:var(--muted);color:var(--surface)}
+.event .badges{display:flex;flex-direction:column;align-items:center;gap:6px;margin:16px 0 0}.event .badges .lang-badge{margin-bottom:0}
 .place-badge{border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
 .article .badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:1.2em 0 1.2em}.article .badges .lang-badge{margin-bottom:0}
 .lang-switch{margin-left:6px;font-size:.9rem;font-weight:600}
 .place-badge{display:inline-flex;align-items:center;gap:6px}
 .pill-icon{display:block;flex:none}
 .pill-icon rect:first-child{stroke:var(--line-strong);stroke-width:.08}
+@media (max-width:860px){.event .badges{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;margin-top:12px}}
