@@ -2,8 +2,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0D1727">
 <script>try{var t=localStorage.getItem('s42-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
-{% seo %}
-{% for a in page.alternates %}<link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">
+{% capture seo_out %}{% seo title=false %}{% endcapture %}
+{%- if page.seo_title -%}
+{%- assign t_old = page.title | xml_escape -%}
+{%- assign t_new = page.seo_title | xml_escape -%}
+{%- assign og_old = '<meta property="og:title" content="' | append: t_old | append: '" />' -%}
+{%- assign og_new = '<meta property="og:title" content="' | append: t_new | append: '" />' -%}
+{%- assign tw_old = '<meta name="twitter:title" content="' | append: t_old | append: '" />' -%}
+{%- assign tw_new = '<meta name="twitter:title" content="' | append: t_new | append: '" />' -%}
+{%- assign seo_out = seo_out | replace: og_old, og_new | replace: tw_old, tw_new -%}
+{%- endif -%}
+{{ seo_out }}
+<title>{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }} | systems42{% endif %}</title>
+{% if page.noindex %}<meta name="robots" content="noindex,follow">
+{% endif %}{% for a in page.alternates %}<link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">
 {% endfor %}<link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml">
 <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" sizes="32x32">
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">

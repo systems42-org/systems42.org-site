@@ -6,6 +6,8 @@ toc:
   - {title: Status, id: status}
   - {title: What you will find here, id: what-you-will-find-here}
   - {title: Engineer with us, id: engineer-with-us}
+seo_title: "Get Started with systems42 (Release Early 2027)"
+description: "systems42 will be published in early 2027 with templates, AI loops, guardrails and worked examples. Until then, join our seminar in Vienna or online."
 ---
 
 ## Stay tuned {#status}

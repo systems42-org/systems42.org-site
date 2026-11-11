@@ -7,6 +7,7 @@ alternates:
   - {lang: en, url: /training/mastering-ai-driven-specification/}
   - {lang: de, url: /training/mastering-ai-driven-specification-de/}
   - {lang: x-default, url: /training/mastering-ai-driven-specification/}
+seo_title: "Mastering AI-Driven Specification: Seminar in Wien (Deutsch)"
 ---
 
 {% assign course = site.data.course.de %}

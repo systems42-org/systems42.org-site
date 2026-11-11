@@ -9,7 +9,7 @@ lang: en
 author:
   name: systems42
 twitter:
-  card: summary
+  card: summary_large_image
 logo: /assets/img/logo-512.png
 
 markdown: kramdown
@@ -49,6 +49,8 @@ defaults:
       type: pages
     values:
       layout: page
+      # Link preview image (og:image, twitter:image), 1200x630 made from logo.svg.
+      image: /assets/img/og-image.png
   - scope:
       path: ""
       type: flyers

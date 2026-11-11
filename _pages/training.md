@@ -7,6 +7,7 @@ toc:
   - {title: Seminar, id: seminar}
   - {title: In-house, id: in-house}
   - {title: 42 family seminars, id: family-seminars}
+seo_title: "Training: Mastering AI-Driven Specification"
 ---
 
 ## Seminar {#seminar}

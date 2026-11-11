@@ -6,6 +6,10 @@ toc:
   - {title: Talks, id: talks}
   - {title: Articles, id: articles}
   - {title: Books, id: books}
+seo_title: "Publications: Talks, Articles and Books"
+description: "Articles, talks and books about spec-driven and agentic engineering, req42 and arc42."
+noindex: true   # thin page: remove noindex and sitemap: false once there is content
+sitemap: false
 ---
 
 ## Talks {#talks}

@@ -8,6 +8,8 @@ toc:
   - {title: "Plan, implement, reengineer", id: plan-implement-reengineer}
   - {title: Why systems42?, id: why-systems42}
   - {title: Technology, id: technology}
+seo_title: "Agentic Engineering: the Spec, the Loops, the Templates"
+description: "Why one spec is the source of truth for agentic engineering, and how the Capture, Inspect and Clarify loops keep requirements and architecture honest."
 ---
 
 ## The spec: the single source of truth {#the-spec}

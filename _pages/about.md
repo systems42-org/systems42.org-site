@@ -5,6 +5,8 @@ permalink: /about/
 toc:
   - {title: Team, id: team}
   - {title: Contact, id: contact}
+seo_title: "About systems42: Peter Hruschka, Peter Gerstbach, Gernot Starke"
+description: "The people behind req42, arc42 and systems42, and how to reach us."
 ---
 
 ## Team {#team}
