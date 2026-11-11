@@ -48,7 +48,7 @@ Registration opens shortly through the training site of our sister project arc42
 
 ## In-house {#in-house}
 
-We would love to demonstrate the systems42 approach to your development team. In German or English. Call us for in-house consulting and seminars.
+We would love to demonstrate the systems42 approach to your development team. In German or English. Call us for in-house consulting and seminars. See our [consulting offers]({{ '/consulting/' | relative_url }}) for what we can do for you.
 
 ## Seminars from the 42 family {#family-seminars}
 

@@ -14,7 +14,7 @@ seo_title: "In-House Consulting for Agentic Engineering with systems42"
 If you plan to use AI-assisted approaches, we can offer you experienced support. Below are some suggestions for what we can do for you. Don't hesitate to contact us and discuss your specific needs.
 
 <div class="offer" id="introduction">
-  <img src="{{ '/assets/img/consulting/introduction.png' | relative_url }}" alt="" width="96" height="96" loading="lazy">
+  {% include consulting/introduction.svg %}
   <div>
     <h2>In-house introduction to systems42</h2>
     <p>You want to learn about the systems42 approach? Instead of coming to one of our courses, we explain and demonstrate our AI-driven approach to your teams, in your environment.</p>
@@ -23,7 +23,7 @@ If you plan to use AI-assisted approaches, we can offer you experienced support.
 </div>
 
 <div class="offer" id="improve-specs">
-  <img src="{{ '/assets/img/consulting/specs.png' | relative_url }}" alt="" width="96" height="96" loading="lazy">
+  {% include consulting/specs.svg %}
   <div>
     <h2>Improve your specs with systems42</h2>
     <p>You have existing specs for one of your products or systems, and maybe you struggle to keep them consistent?</p>
@@ -33,7 +33,7 @@ If you plan to use AI-assisted approaches, we can offer you experienced support.
 </div>
 
 <div class="offer" id="improve-processes">
-  <img src="{{ '/assets/img/consulting/processes.png' | relative_url }}" alt="" width="96" height="96" loading="lazy">
+  {% include consulting/processes.svg %}
   <div>
     <h2>Improve your business processes with systems42</h2>
     <p>As a business analyst or product owner you want to improve your business processes or your organizational structure. Let us demonstrate the systematic approach of systems42 to business improvement.</p>
@@ -48,4 +48,3 @@ Tell us about your situation and we will suggest a format. In German or English.
 
 <p><a class="btn btn-blue" href="mailto:info@systems42.org">Write to us</a></p>
 
-<p class="attribution">Icons by <a href="https://www.flaticon.com/free-icons/ai-powered-support" title="ai powered support icons">asol_studio</a>, <a href="https://www.flaticon.com/free-icons/requirement" title="requirement icons">Nuricon</a> and <a href="https://www.flaticon.com/free-icons/change-management" title="change management icons">Uniconlabs</a> from Flaticon.</p>
