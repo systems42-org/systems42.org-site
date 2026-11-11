@@ -65,3 +65,10 @@
 .post-list a{font-family:var(--display);font-size:1.35rem;text-decoration:none}
 .post-list p{margin-top:4px;color:var(--muted)}
 .post-back{margin-top:2.5em}
+.lang-badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.lang-de{background:var(--arc-700);color:#fff}
+.lang-en{background:var(--req-400);color:var(--ink)}
+.event .badges{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}.event .badges .lang-badge{margin-bottom:0}
+.place-badge{border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+.article .badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:1.2em 0 1.2em}.article .badges .lang-badge{margin-bottom:0}
+.lang-switch{margin-left:6px;font-size:.9rem;font-weight:600}

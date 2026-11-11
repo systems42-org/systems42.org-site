@@ -1,6 +1,7 @@
 ---
 title: Training
 lede: Seminars and in-house consulting for agentic engineering with systems42.
+description: "Seminars and in-house consulting for agentic engineering with systems42: Mastering AI-Driven Specification, in Vienna (German) and online (English)."
 permalink: /training/
 toc:
   - {title: Seminar, id: seminar}
@@ -14,13 +15,15 @@ toc:
 <div class="event" id="{{ ev.id }}">
   <div class="date"><b>{{ ev.day_range }}</b><span>{{ ev.month }}</span></div>
   <div>
+    {% assign where_clean = ev.where | replace: ", held in German", "" | replace: ", held in English", "" %}{% assign where_parts = where_clean | split: " (" %}
+    <p class="badges"><span class="lang-badge lang-{{ ev.lang }}">{% if ev.lang == "de" %}German{% else %}English{% endif %}</span><span class="lang-badge place-badge">{{ where_parts[0] }}</span></p>
     <h3>{{ ev.title }}</h3>
     {% if ev.lang == "de" %}<p lang="de">{{ site.data.course.de.subtitle }}</p>{% else %}<p>{{ ev.subtitle }}</p>{% endif %}
     {% if ev.trainers %}<p>With {{ ev.trainers | join: " and " }}</p>{% endif %}
-    <p><b>{{ ev.where }}</b></p>
+    {% if where_parts.size > 1 %}{% assign extra = where_parts[1] | remove: ")" %}<p>{{ extra | slice: 0 | upcase }}{{ extra | slice: 1, 100 }}</p>{% endif %}
     <div class="cta">
       {% if ev.registration_open %}<a class="btn btn-blue" href="https://trainings.arc42.org/registration/?kurs={{ ev.arc42_id }}">Register</a>{% endif %}
-      {% if ev.lang == "de" %}<a class="btn btn-outline" href="{{ '/training/maispec-de/' | relative_url }}" hreflang="de" lang="de">Über das Seminar</a>{% else %}<a class="btn btn-outline" href="{{ '/training/maispec/' | relative_url }}">About the seminar</a>{% endif %}
+      {% if ev.lang == "de" %}<a class="btn btn-outline" href="{{ '/training/mastering-ai-driven-specification-de/' | relative_url }}" hreflang="de" lang="de">Über das Seminar</a>{% else %}<a class="btn btn-outline" href="{{ '/training/mastering-ai-driven-specification/' | relative_url }}">About the seminar</a>{% endif %}
       {% assign flyer = site.flyers | where: "lang", ev.lang | first %}
       {% if flyer %}{% capture flyer_label %}Flyer (PDF, {% if ev.lang == "de" %}German{% else %}English{% endif %}){% endcapture %}<a class="btn btn-outline btn-icon" href="{{ flyer.pdf | relative_url }}" hreflang="{{ ev.lang }}" download data-tip="{{ flyer_label }}" aria-label="{{ flyer_label }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></a>{% endif %}
     </div>
