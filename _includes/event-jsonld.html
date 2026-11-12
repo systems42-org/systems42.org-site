@@ -29,7 +29,7 @@
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {"@type": "Place", "name": {{ ev.venue.name | default: city | jsonify }}, "address": {"@type": "PostalAddress", "streetAddress": {{ ev.venue.street | jsonify }}, "postalCode": {{ ev.venue.postal_code | jsonify }}, "addressLocality": {{ ev.venue.city | default: city | jsonify }}, "addressCountry": {{ ev.venue.country | default: "AT" | jsonify }}}{% if ev.venue.lat %}, "geo": {"@type": "GeoCoordinates", "latitude": {{ ev.venue.lat | jsonify }}, "longitude": {{ ev.venue.lng | jsonify }}}{% endif %}},
   {%- endif %}
-  "image": {{ '/assets/img/og-image.png' | absolute_url | jsonify }},
+  "image": {{ page.image.path | default: '/assets/img/og-image.png' | absolute_url | jsonify }},
   "url": {{ page_url | absolute_url | jsonify }},
   "organizer": {"@type": "Organization", "name": "systems42", "url": {{ site.url | jsonify }}},
   "performer": [{% for t in ev.trainers %}{"@type": "Person", "name": {{ t | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}]

@@ -51,7 +51,12 @@ defaults:
       layout: page
       # Link preview image (og:image, twitter:image), 1200x630, rendered by
       # scripts/og-image.mjs (npm run og-image) from scripts/og-image.html.
-      image: /assets/img/og-image.png
+      # LinkedIn caches the image by URL: bump ?v= whenever the image changes.
+      image:
+        path: /assets/img/og-image.png?v=2
+        width: 1200
+        height: 630
+        alt: "systems42: three loops keep the spec alive (Capture, Inspect, Clarify). Agentic engineering with req42 and arc42."
   - scope:
       path: ""
       type: flyers
