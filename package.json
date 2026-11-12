@@ -1,10 +1,11 @@
 {
   "name": "systems42-site-tools",
   "private": true,
-  "description": "Build helpers only (the site itself is Jekyll): prints the flyers to PDF.",
+  "description": "Build helpers only (the site itself is Jekyll): prints the flyers to PDF and renders the og:image.",
   "type": "module",
   "scripts": {
-    "flyer": "node scripts/flyer-pdf.mjs"
+    "flyer": "node scripts/flyer-pdf.mjs",
+    "og-image": "node scripts/og-image.mjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

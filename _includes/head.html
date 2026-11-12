@@ -12,6 +12,15 @@
 {%- assign tw_new = '<meta name="twitter:title" content="' | append: t_new | append: '" />' -%}
 {%- assign seo_out = seo_out | replace: og_old, og_new | replace: tw_old, tw_new -%}
 {%- endif -%}
+{%- comment -%} Jekyll gives every document in the pages collection the build time
+as its date, so jekyll-seo-tag marks it og:type "article" with a made-up
+publish time. Pages are websites; only blog posts are articles. {%- endcomment -%}
+{%- if page.collection == "pages" and page.date -%}
+{%- assign d = page.date | date_to_xmlschema -%}
+{%- assign pub = '<meta property="article:published_time" content="' | append: d | append: '" />' -%}
+{%- assign mod = '<meta property="article:modified_time" content="' | append: d | append: '" />' -%}
+{%- assign seo_out = seo_out | replace: '<meta property="og:type" content="article" />', '<meta property="og:type" content="website" />' | replace: pub, '' | replace: mod, '' -%}
+{%- endif -%}
 {{ seo_out }}
 <title>{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }} | systems42{% endif %}</title>
 {% if page.noindex %}<meta name="robots" content="noindex,follow">

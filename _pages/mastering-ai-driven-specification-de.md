@@ -3,6 +3,7 @@ title: Mastering AI-Driven Specification
 lede: Spezifikation für Requirements und Architektur als Basis für agentisches Software-Engineering
 description: "Zweitägiger Hands-on-Workshop: Spezifikation für Requirements und Architektur mit KI-Agenten erstellen und live erleben, wie ein Agent daraus Code und Tests generiert. In Wien, auf Deutsch."
 permalink: /training/mastering-ai-driven-specification-de/
+locale: de_AT
 alternates:
   - {lang: en, url: /training/mastering-ai-driven-specification/}
   - {lang: de, url: /training/mastering-ai-driven-specification-de/}

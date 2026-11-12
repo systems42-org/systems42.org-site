@@ -6,10 +6,10 @@ description: >-
 url: "https://systems42.org"
 baseurl: ""
 lang: en
+# og:locale (jekyll-seo-tag); German pages set their own `locale: de_AT`.
+locale: en_US
 author:
   name: systems42
-twitter:
-  card: summary_large_image
 logo: /assets/img/logo-512.png
 
 markdown: kramdown
@@ -49,7 +49,8 @@ defaults:
       type: pages
     values:
       layout: page
-      # Link preview image (og:image, twitter:image), 1200x630 made from logo.svg.
+      # Link preview image (og:image, twitter:image), 1200x630, rendered by
+      # scripts/og-image.mjs (npm run og-image) from scripts/og-image.html.
       image: /assets/img/og-image.png
   - scope:
       path: ""

@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Link preview image (og:image), 1200x630. Rendered to assets/img/og-image.png
+     by scripts/og-image.mjs, which also inlines the three loop diagrams from
+     _includes/loops/ into the <div data-loop> slots below. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face{font-family:"Libre Caslon Text";font-weight:400;src:url(../assets/fonts/LibreCaslonText-400.woff2) format("woff2")}
+  @font-face{font-family:"Libre Caslon Text";font-weight:700;src:url(../assets/fonts/LibreCaslonText-700.woff2) format("woff2")}
+  @font-face{font-family:"Atkinson Hyperlegible Next";font-weight:200 800;src:url(../assets/fonts/AtkinsonHyperlegibleNext-variable.woff2) format("woff2")}
+  :root{
+    --ink:#0D1727; --paper:#F5F8FB; --surface:#FFFFFF; --text:#15213A; --muted:#55657C;
+    --arc-600:#1D7FE0; --arc-700:#1A5FB4; --req-400:#4BD7C2; --req-600:#17B59D; --req-700:#0B7F6D;
+    --display:"Libre Caslon Text",Georgia,serif;
+    --body:"Atkinson Hyperlegible Next",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{background:var(--surface);color:var(--text);font-family:var(--body);display:flex;flex-direction:column;padding:40px 56px 0}
+  header{display:flex;align-items:center;justify-content:space-between;gap:32px}
+  h1{font-family:var(--display);font-weight:400;font-size:54px;line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+  .brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:40px;letter-spacing:-.01em;color:var(--ink);flex:none}
+  .brand img{width:62px;height:62px;border-radius:12px}
+  .brand .num{color:var(--req-600)}
+  .loops{flex:1;min-height:0;display:flex;justify-content:space-between;align-items:center;margin:0 -16px}
+  .loops svg{display:block;height:350px;width:auto;overflow:visible}
+  footer{display:flex;justify-content:space-between;align-items:center;margin:0 -56px;padding:0 56px;height:76px;background:var(--ink);color:#F2F6FA;font-size:27px;font-weight:600}
+  footer .url{font-weight:800;color:var(--req-400)}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Three loops keep<br>the spec alive.</h1>
+    <div class="brand"><img src="../assets/img/logo.svg" alt=""><span>systems<span class="num">42</span></span></div>
+  </header>
+  <div class="loops">
+    <div data-loop="capture"></div>
+    <div data-loop="inspect"></div>
+    <div data-loop="clarify"></div>
+  </div>
+  <footer>
+    <span>Agentic engineering with req42 &amp; arc42</span>
+    <span class="url">systems42.org</span>
+  </footer>
+</body>
+</html>
