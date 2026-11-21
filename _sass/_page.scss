@@ -83,3 +83,15 @@
 .offer h2{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0 0 .4em}
 .offer p{margin-top:.6em}
 @media (max-width:600px){.offer{grid-template-columns:1fr;gap:12px}.offer-icon{width:56px;height:56px}}
+
+/* Screenshots in posts: one image per theme, shown to match the page. */
+.article figure.screenshot{margin:1.6em 0 0}
+.article figure.screenshot img{display:block;width:100%;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.article figure.screenshot figcaption{margin-top:.6em;color:var(--muted);font-size:.9rem}
+.article .shot-dark{display:none!important}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .article .shot-light{display:none!important}
+  :root:not([data-theme="light"]) .article .shot-dark{display:block!important}
+}
+:root[data-theme="dark"] .article .shot-light{display:none!important}
+:root[data-theme="dark"] .article .shot-dark{display:block!important}

@@ -4,8 +4,6 @@ lede: News and longer thoughts on agentic engineering with systems42.
 permalink: /blog/
 seo_title: "Blog: Agentic Engineering with systems42"
 description: "News and longer thoughts on agentic engineering with systems42."
-noindex: true   # thin page: remove noindex and sitemap: false once there is content
-sitemap: false
 ---
 
 {% if site.posts.size > 0 %}
