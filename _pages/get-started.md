@@ -21,6 +21,7 @@ We are currently testing our approach with many examples. As soon as we have sol
 <li><strong>The loops</strong>Harnesses for Capture, Inspect and Clarify that you can run with the AI tooling of your choice.</li>
 <li><strong>Rules and guardrails</strong>A starter set of checks the Inspect loop runs against your spec, and how to add your own.</li>
 <li><strong>Worked examples</strong>Real projects we ran through the cycle, with their specs and findings.</li>
+<li><strong>The dashboard</strong>A read-only web view of your spec, with search, traces and open issues. Available now: <a href="https://dashboard.systems42.org">dashboard.systems42.org</a>.</li>
 </ol>
 
 ## Engineer with us {#engineer-with-us}

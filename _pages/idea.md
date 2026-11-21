@@ -50,7 +50,7 @@ Inspections can be time-triggered, for example after a capture or at defined int
 Clarify is triggered by humans who want to improve the existing spec by resolving issues or providing new rules and guardrails.
 
 <ol class="steps">
-<li><strong>Pick topic</strong>The AI presents the spec and the list of open issues as a dashboard. Humans pick one.</li>
+<li><strong>Pick topic</strong>The AI presents the spec and the list of open issues as a <a href="https://dashboard.systems42.org">dashboard</a>. Humans pick one.</li>
 <li><strong>Discuss</strong>Humans discuss the issue with the AI until there is a decision, or an explicit "cannot decide yet".</li>
 <li><strong>Write back</strong>Humans ask the AI to update the spec, or the rules and guardrails, with the outcome of the discussion.</li>
 </ol>
@@ -65,4 +65,6 @@ For management the advantage is traceability and control. Every line of code can
 
 ## Technology {#technology}
 
-systems42 keeps the spec as a markdown wiki in the style Andrej Karpathy described: plain files, versioned, readable by humans and machines alike, with dashboards for open issues and harnesses that run the loops.
+systems42 keeps the spec as a markdown wiki in the style Andrej Karpathy described: plain files, versioned, readable by humans and machines alike, with harnesses that run the loops.
+
+People read the wiki through the **systems42 dashboard**: a read-only web view that searches the spec, traces requirements to architecture and decisions, shows source and status on every page, and lists the open issues that Clarify starts from. It never writes to the wiki. Try the live demo at [dashboard.systems42.org](https://dashboard.systems42.org).
