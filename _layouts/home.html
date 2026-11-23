@@ -37,10 +37,14 @@ layout: default
     <div class="loops">
       {% for l in h.loops.items %}
       <div class="loop">
-        {% include loop-figure.html name=l.figure %}
-        <h3>{{ l.name }}</h3>
-        <p>{{ l.text }}</p>
+        <div class="loop-fig">
+          {% include loop-figure.html name=l.figure %}
+          <h3>{{ l.name }}</h3>
+        </div>
         <span class="human {{ l.driver_class }}">{{ l.driver }}</span>
+        <ol class="loop-steps">
+          {% for st in l.steps %}<li><strong>{{ st.name }}</strong>{{ st.text }}</li>{% endfor %}
+        </ol>
       </div>
       {% endfor %}
     </div>

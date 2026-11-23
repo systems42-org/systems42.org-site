@@ -32,9 +32,18 @@ section.band+section.band{border-top:1px solid var(--line)}
 
 .loops{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);margin-top:36px}
 .loop svg{width:100%;height:auto;display:block}
-.loop h3{margin-top:10px}
-.loop p{color:var(--muted);margin-top:6px;font-size:1rem}
-.loop .human{font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:10px;display:inline-block;padding:3px 9px;border-radius:999px}
+// The diagrams carry their step labels and loop name as SVG text, far too small at this width.
+// Here they are hidden; the name is the real heading in the ring, the steps are the list below.
+.loop svg [class^="label-"],.loop svg [class^="loop-name-"]{display:none}
+.loop svg>g>:not([class^="node-"]):not([class^="label-"]){translate:0 14px}
+.loop-fig{position:relative}
+.loop-fig h3{position:absolute;left:0;right:0;top:59.5%;transform:translateY(-50%);text-align:center;font-size:1.25rem}
+.loop{text-align:center}
+.loop .human{font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;display:inline-block;padding:3px 9px;border-radius:999px}
+.loop-steps{counter-reset:ls;list-style:none;padding:0;margin:18px 0 0;text-align:left}
+.loop-steps li{counter-increment:ls;position:relative;padding:11px 0 11px 40px;border-top:1px solid var(--line);color:var(--muted)}
+.loop-steps li::before{content:counter(ls);position:absolute;left:4px;top:10px;font-family:var(--display);font-size:1.3rem;line-height:1.2;color:var(--muted)}
+.loop-steps strong{display:block;color:var(--text)}
 .h-ai{background:var(--arc-100);color:var(--arc-700)} .h-both{background:var(--req-100);color:var(--req-700)}
 
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem;color:var(--muted);align-self:end}

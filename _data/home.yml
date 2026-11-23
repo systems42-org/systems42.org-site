@@ -21,22 +21,32 @@ templates:
 loops:
   headline: Three loops keep the spec alive.
   lede: AI fills and checks the spec. Humans decide where it matters.
+  # Step names and order as in the loop diagrams (_includes/loops/) and on /idea/.
   items:
     - name: Capture
       figure: capture
-      text: Humans provide raw input. AI turns it into clean markdown, files it into the matching spec sections, cross-links it and asks when something does not fit.
       driver: AI, started by a human
       driver_class: h-ai
+      steps:
+        - {name: Markdownify, text: "Raw input becomes clean, uniform markdown."}
+        - {name: Cross-check and link, text: The matching spec sections are filled and cross-linked.}
+        - {name: Ask questions, text: "Where the input does not fit, the AI asks a human."}
     - name: Inspect
       figure: inspect
-      text: On a schedule or on demand, AI checks the spec against rules, guardrails and constraints and adds every finding to the backlog.
       driver: AI, scheduled or on demand
       driver_class: h-ai
+      steps:
+        - {name: Detect issues, text: "The spec is checked against rules, guardrails and constraints."}
+        - {name: Flag gaps, text: "Missing, inconsistent or outdated parts are marked."}
+        - {name: Update backlog, text: Every finding goes onto the list of open issues.}
     - name: Clarify
       figure: clarify
-      text: Humans pick an open point, discuss it with the AI, and have the outcome written back into the spec or the rules.
       driver: Humans and AI together
       driver_class: h-both
+      steps:
+        - {name: Pick topic, text: Humans pick an open issue.}
+        - {name: Discuss, text: They discuss it with the AI until there is a decision.}
+        - {name: Write back, text: The AI writes the outcome into the spec or the rules.}
 
 spec:
   headline: One spec. Eighteen sections.
