@@ -31,6 +31,7 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |
 | Seminar description and flyers | `_data/course/de.yml` and `en.yml` (text, agenda, key facts; shared by the flyers and /training/), `_flyers/*.md` (one per language), layout `flyer`, styles `_sass/_flyer-sheet.scss`; dates from `_data/events.yml` |
+| Hero figure of the home page | `_includes/hero-loops.svg` (three loops through one spec); styles under `.hero-loops` in `_sass/_home.scss`. Its loop names and drivers repeat `_data/home.yml` by hand |
 | Loop diagrams | `_includes/loops/*.svg` (inlined so they take the page colours); originals in `assets/img/loops/` |
 
 Colour rule: blue is arc42 and architecture, green is req42 and requirements, the gradient marks where both meet.
