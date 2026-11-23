@@ -3,14 +3,20 @@ title: The idea of agentic engineering
 lede: Why a spec, why these templates, and how AI loops keep them honest.
 permalink: /idea/
 toc:
-  - {title: The spec, id: the-spec}
-  - {title: Agentic loops, id: agentic-loops}
-  - {title: "Plan, implement, reengineer", id: plan-implement-reengineer}
   - {title: Why systems42?, id: why-systems42}
+  - {title: The spec, id: the-spec}
+  - {title: "Plan, implement, reengineer", id: plan-implement-reengineer}
+  - {title: Agentic loops, id: agentic-loops}
   - {title: Technology, id: technology}
 seo_title: "Agentic Engineering: the Spec, the Loops, the Templates"
 description: "Why one spec is the source of truth for agentic engineering, and how the Capture, Inspect and Clarify loops keep requirements and architecture honest."
 ---
+
+## Why systems42? {#why-systems42}
+
+AI agents generate code fast. What they lack is a lasting record of what the system must do and how it is built. systems42 gives them that record, the spec, and keeps it current.
+
+For management the advantage is traceability and control. Code can be traced back to documented requirements and architecture decisions. Strategic decisions stay human, tactical execution goes agentic, and the spec keeps the two in step.
 
 ## The spec: the single source of truth {#the-spec}
 
@@ -21,11 +27,17 @@ Together they form the spec from which source code can be developed. systems42 t
 <div class="callout req"><strong>req42 · requirements</strong><p>Vision and goals, functional requirements, supporting models, roadmap, team and resources.</p></div>
 <div class="callout arc"><strong>arc42 · architecture</strong><p>Solution strategy, building blocks, runtime, deployment, crosscutting concepts, decisions.</p></div>
 
+## Plan, implement, reengineer {#plan-implement-reengineer}
+
+From the spec, agents plan and implement: they generate and test source code based on a plan derived from requirements and architecture. The reverse direction exists too. *Reengineer* recreates the systems42 spec from existing code, so that legacy systems can enter the same cycle.
+
 ## Agentic loops fill and check the spec {#agentic-loops}
 
 Three loops run around the spec. Two are driven by AI, one is a conversation between humans and AI. All three ask for clarification where necessary.
 
 ### Capture
+
+<div class="idea-loop">{% include loop-figure.html name="capture" %}</div>
 
 Humans provide raw input and trigger the AI to fill the spec.
 
@@ -37,6 +49,8 @@ Humans provide raw input and trigger the AI to fill the spec.
 
 ### Inspect
 
+<div class="idea-loop">{% include loop-figure.html name="inspect" %}</div>
+
 Inspections can be time-triggered, for example after a capture or at defined intervals, or explicitly triggered by humans.
 
 <ol class="steps">
@@ -47,6 +61,8 @@ Inspections can be time-triggered, for example after a capture or at defined int
 
 ### Clarify
 
+<div class="idea-loop">{% include loop-figure.html name="clarify" %}</div>
+
 Clarify is triggered by humans who want to improve the existing spec by resolving issues or providing new rules and guardrails.
 
 <ol class="steps">
@@ -55,16 +71,13 @@ Clarify is triggered by humans who want to improve the existing spec by resolvin
 <li><strong>Write back</strong>Humans ask the AI to update the spec, or the rules and guardrails, with the outcome of the discussion.</li>
 </ol>
 
-## Plan, implement, reengineer {#plan-implement-reengineer}
-
-From the spec, agents plan and implement: they generate and test source code based on a plan derived from requirements and architecture. The reverse direction exists too. *Reengineer* recreates the systems42 spec from existing code, so that legacy systems can enter the same cycle.
-
-## Why systems42? {#why-systems42}
-
-For management the advantage is traceability and control. Every line of code can be mapped back to documented requirements and architectural decisions. Strategic decisions stay human, tactical execution goes agentic, and the spec is the handshake between the two.
-
 ## Technology {#technology}
 
 systems42 keeps the spec as a markdown wiki in the style Andrej Karpathy described: plain files, versioned, readable by humans and machines alike, with harnesses that run the loops.
 
 People read the wiki through the **systems42 dashboard**: a read-only web view that searches the spec, traces requirements to architecture and decisions, shows source and status on every page, and lists the open issues that Clarify starts from. It never writes to the wiki. Try the live demo at [dashboard.systems42.org](https://dashboard.systems42.org).
+
+<figure class="screenshot">
+<a href="https://dashboard.systems42.org/demo/"><img class="shot-light" src="{{ '/assets/img/blog/dashboard-home.webp' | relative_url }}" width="1440" height="900" loading="lazy" alt="Home page of the systems42 dashboard: the vision sentence, a requirements card with 61 pages and 5 open issues, latest changes and open issues in the middle, and an architecture card."><img class="shot-dark" src="{{ '/assets/img/blog/dashboard-home-dark.webp' | relative_url }}" width="1440" height="900" loading="lazy" alt="Home page of the systems42 dashboard in dark mode: the vision sentence, a requirements card with 61 pages and 5 open issues, latest changes and open issues in the middle, and an architecture card."></a>
+<figcaption>The home page of the live demo. It shows the dashboard's own requirements wiki.</figcaption>
+</figure>

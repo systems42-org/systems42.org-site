@@ -21,6 +21,7 @@ templates:
 loops:
   headline: Three loops keep the spec alive.
   lede: AI fills and checks the spec. Humans decide where it matters.
+  more: {label: How the loops work in detail, url: "/idea/#agentic-loops"}
   # Step names and order as in the loop diagrams (_includes/loops/) and on /idea/.
   items:
     - name: Capture
@@ -52,6 +53,7 @@ spec:
   headline: One spec. Eighteen sections.
   lede: Six sections from req42 for requirements, six from arc42 for architecture, and six common to both. Together they are the single source of truth from which code is generated and tested.
   text: Both templates have been used for more than 20 years, in many countries and domains. systems42 does not replace them. It makes them executable.
+  more: {label: Why one spec is the source of truth, url: "/idea/#the-spec"}
 
 status:
   headline: Stay tuned.

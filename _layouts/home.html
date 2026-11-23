@@ -48,6 +48,7 @@ layout: default
       </div>
       {% endfor %}
     </div>
+    <p class="more"><a href="{{ h.loops.more.url | relative_url }}">{{ h.loops.more.label }}</a></p>
   </div>
 </section>
 
@@ -75,6 +76,7 @@ layout: default
       </div>
       {% endfor %}
     </div>
+    <p class="more"><a href="{{ h.spec.more.url | relative_url }}">{{ h.spec.more.label }}</a></p>
   </div>
 </section>
 
