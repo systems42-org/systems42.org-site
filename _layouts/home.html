@@ -58,7 +58,7 @@ layout: default
       <div class="legend">
         <span><span class="dot dot-req"></span>req42 · requirements</span>
         <span><span class="dot dot-arc"></span>arc42 · architecture</span>
-        <span><span class="dot dot-s42"></span>shared by both</span>
+        <span><span class="dot dot-s42"></span>common to both</span>
       </div>
     </div>
     <div class="spec-groups">
@@ -81,7 +81,10 @@ layout: default
       <h2>{{ h.status.headline }} <b>{{ h.status.highlight }}</b></h2>
       <p>{{ h.status.text }}</p>
     </div>
-    {% if ev %}<a class="btn btn-mint" href="{{ '/training/' | relative_url }}">{{ ev.short }}</a>{% endif %}
+    <div class="cta">
+      <a class="btn btn-mint" href="{{ h.status.demo.url }}">{{ h.status.demo.label }}</a>
+      {% if ev %}<a class="btn btn-ghost" href="{{ '/training/' | relative_url }}">{{ ev.short }}</a>{% endif %}
+    </div>
   </div>
 </div>
 
