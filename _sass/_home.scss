@@ -46,6 +46,8 @@ section.band+section.band{border-top:1px solid var(--line)}
 .loop-steps strong{display:block;color:var(--text)}
 .h-ai{background:var(--arc-100);color:var(--arc-700)} .h-both{background:var(--req-100);color:var(--req-700)}
 
+.band .more{margin-top:28px;font-weight:700}
+
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem;color:var(--muted);align-self:end}
 .spec-groups{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
 .spec-group{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px}

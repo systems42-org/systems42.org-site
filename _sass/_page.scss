@@ -95,3 +95,12 @@
 }
 :root[data-theme="dark"] .article .shot-light{display:none!important}
 :root[data-theme="dark"] .article .shot-dark{display:block!important}
+
+// Loop diagrams on /idea/. From 600px width their labels are 13px and readable;
+// on narrow screens the labels are hidden and the steps list below names the steps.
+.idea-loop{max-width:600px;margin-top:1.2em}
+.idea-loop svg{display:block;width:100%;height:auto}
+@media (max-width:640px){
+  .idea-loop svg [class^="label-"]{display:none}
+  .idea-loop svg>g>:not([class^="node-"]):not([class^="label-"]){translate:0 14px}
+}
