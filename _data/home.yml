@@ -1,21 +1,22 @@
 # All texts of the home page. Edit here, not in _layouts/home.html.
 hero:
   headline: Where AI meets engineering discipline.
-  sub: Built on the pragmatic, field-proven discipline of req42 and arc42, extended to AI-native systems. Proven templates, AI-powered execution.
+  sub: Requirements and architecture in one spec of eighteen sections, kept as a markdown wiki that AI agents read, fill, check and implement. By the makers of req42 and arc42.
   primary: {label: The idea, url: /idea/}
-  secondary: {label: Training, url: /training/}
-  meta_prefix: "Open source · built on req42 and arc42 ·"
+  secondary: {label: Try the dashboard demo, url: "https://dashboard.systems42.org"}
+  meta_prefix: "Open source ·"
   meta_highlight: public release planned early 2027
 
 templates:
   headline: Proven templates. AI-powered execution.
-  lede: Requirements and architecture specs are not afterthoughts. They are living contracts that agents reference during generation and testing.
+  lede: AI agents generate code fast. What they lack is a lasting record of what the system must do and how it is built. The spec is that record.
   paragraphs:
-    - "Our templates de-risk the agentic cycle, and AI-powered execution makes that cycle run at machine speed. Management gains traceability: every line of code can be mapped back to documented requirements and architectural decisions."
-    - Where human judgment defines the guardrails, agentic execution fills the lanes. The templates keep both in sync.
+    - The spec is a set of plain markdown files, structured by the req42 and arc42 templates and versioned in git. Agents read it before they generate and test code, so code can be traced back to a requirement or an architecture decision.
+    - People set the goals, the constraints and the decisions that matter. Agents do the writing, the checking and the implementation. The templates give both the same structure to work in.
+    - systems42 comes from Peter Hruschka, Peter Gerstbach and Gernot Starke, the people behind req42 and arc42.
   quote_em: Strategic decisions stay human. Tactical execution goes agentic.
-  quote_rest: The templates are the handshake that makes both possible.
-  quote_who: The systems42 idea in one sentence
+  quote_rest: The templates keep both in step.
+  quote_who: The systems42 idea in short
 
 loops:
   headline: Three loops keep the spec alive.
@@ -28,7 +29,7 @@ loops:
       driver_class: h-ai
     - name: Inspect
       figure: inspect
-      text: Time-triggered or on demand, AI checks the spec against rules, guardrails and constraints and adds every finding to the backlog.
+      text: On a schedule or on demand, AI checks the spec against rules, guardrails and constraints and adds every finding to the backlog.
       driver: AI, scheduled or on demand
       driver_class: h-ai
     - name: Clarify
@@ -39,13 +40,14 @@ loops:
 
 spec:
   headline: One spec. Eighteen sections.
-  lede: req42 for requirements, arc42 for architecture, six sections they share. Together they are the single source of truth from which code is generated and tested.
+  lede: Six sections from req42 for requirements, six from arc42 for architecture, and six common to both. Together they are the single source of truth from which code is generated and tested.
   text: Both templates have been used for more than 20 years, in many countries and domains. systems42 does not replace them. It makes them executable.
 
 status:
   headline: Stay tuned.
   highlight: Public release early 2027.
   text: We are testing the approach with many examples. As soon as we have solid results we will publish systems42 so that you can start directly with your own projects.
+  demo: {label: Try the dashboard demo, url: "https://dashboard.systems42.org"}
   event: seminar-2027-01
 
 family:

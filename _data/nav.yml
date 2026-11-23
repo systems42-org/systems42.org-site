@@ -3,22 +3,22 @@
 primary:
   - title: Idea
     url: /idea/
-  - title: Get started
-    url: /get-started/
   - title: Training
     url: /training/
-  - title: Consulting
-    url: /consulting/
-more:
   - title: Blog
     url: /blog/
-    note: News and longer thoughts
+  - title: About
+    url: /about/
+more:
+  - title: Get started
+    url: /get-started/
+    note: The user's guide, from the release in early 2027
+  - title: Consulting
+    url: /consulting/
+    note: In-house introduction and support
   - title: Publications
     url: /publications/
     note: Articles, talks and books
   - title: Examples
     url: /examples/
     note: Projects run through the cycle
-  - title: About
-    url: /about/
-    note: The people behind systems42

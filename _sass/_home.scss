@@ -52,6 +52,8 @@ section.band+section.band{border-top:1px solid var(--line)}
 
 .status{background:var(--ink);color:var(--on-ink)}
 .status .wrap{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding-block:clamp(36px,5vw,56px)}
+.status .cta{display:flex;flex-direction:column;gap:12px}
+.status .cta .btn{justify-content:center}
 .status p{color:var(--on-ink-muted);max-width:52ch;margin-top:.5em}
 .status h2 b{color:var(--req-400);font-weight:400}
 
