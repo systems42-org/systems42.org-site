@@ -5,7 +5,7 @@
 .masthead{background:var(--ink);color:var(--on-ink);position:relative;z-index:30}
 .masthead .wrap{display:flex;align-items:center;gap:28px;min-height:68px;padding-block:10px;position:relative}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:800;font-size:1.32rem;letter-spacing:-.01em}
-.brand img{width:38px;height:38px;border-radius:8px}
+.brand img{width:38px;height:38px}
 .brand .num{color:var(--req-400)}
 .nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
 .nav a{color:var(--on-ink);text-decoration:none;padding:8px 12px;border-radius:var(--radius);font-weight:500;opacity:.9}
