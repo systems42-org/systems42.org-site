@@ -34,7 +34,7 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | Hero figure of the home page | `_includes/hero-loops.svg` (three loops through one spec); styles under `.hero-loops` in `_sass/_home.scss`. Its loop names and drivers repeat `_data/home.yml` by hand |
 | Loop diagrams | `_includes/loops/*.svg` (inlined so they take the page colours); originals in `assets/img/loops/` |
 
-Colour rule: blue is arc42 and architecture, green is req42 and requirements, the gradient marks where both meet.
+Colour rule: blue is arc42 and architecture, green is req42 and requirements, the gradient marks where both meet. The scales are derived from the helix logo; what each step (100 to 700) is for is described at the top of `_sass/_tokens.scss`.
 
 ## Flyer
 
@@ -48,7 +48,7 @@ The dev server (`make dev`) does not make the PDFs, so the PDF links give 404 th
 
 Things that are deliberately provisional. Check this list before the public release.
 
-- **The colour tokens come from the placeholder logo.** `--req-*` and `--arc-*` in `_sass/_tokens.scss` were sampled from the first logo; the helix logo has its own shades. Whether to align them is open. When the logo changes, replace the files listed under Logo, rerun `npm run og-image` and bump `?v=` of its path in `_config.yml`, because LinkedIn caches the image by URL.
+- **When the logo changes**, replace the files listed under Logo, check the colour scales in `_sass/_tokens.scss` (derived from the logo, see the comment there), rerun `npm run og-image` and bump `?v=` of its path in `_config.yml`, because LinkedIn caches the image by URL.
 - **`/publications/` is set to `noindex` and is not in the sitemap**, because it has no content yet and search engines would treat it as a thin page. As soon as it has real content, remove `noindex: true` and `sitemap: false` from its front matter (`_pages/publications.md`). Otherwise it never shows up in search. `/imprint/`, `/privacy/` and `/search/` are also left out of the sitemap, but on purpose and for good.
 - **Imprint and privacy** still say "Details to follow".
 - **Structured data** (schema.org `Event` as JSON-LD, `_includes/event-jsonld.html`, fed by `_data/events.yml`) is in place on /training/ and the two seminar pages. Times and venue come from `events.yml` (`start_time`, `end_time`, `utc_offset`, `venue`); the offer carries only the regular `price_eur`, not the early-bird/alumni discount. Remember to set `utc_offset` to +02:00 for dates in summer time. Check after each change with Google's Rich Results Test.

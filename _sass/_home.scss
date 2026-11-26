@@ -56,7 +56,7 @@ section.band+section.band{border-top:1px solid var(--line)}
 .cells{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .common .cells{grid-template-columns:repeat(6,1fr)}
 .cell{border-radius:6px;padding:10px 10px 12px;font-size:.86rem;line-height:1.25;min-height:62px;border:1px solid transparent}
-.cell b{display:block;font-family:var(--mono);font-size:.74rem;font-weight:600;margin-bottom:4px;opacity:.75}
+.cell b{display:block;font-family:var(--mono);font-size:.74rem;font-weight:600;margin-bottom:4px}
 .c-req{background:var(--req-100);color:var(--req-700);border-color:color-mix(in srgb,var(--req-400) 45%,transparent)}
 .c-arc{background:var(--arc-100);color:var(--arc-700);border-color:color-mix(in srgb,var(--arc-400) 45%,transparent)}
 .c-fuse{background:var(--fuse-100);color:var(--fuse-700);border-color:color-mix(in srgb,var(--fuse-400) 45%,transparent)}
