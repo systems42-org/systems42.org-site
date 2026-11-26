@@ -15,14 +15,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>{{ course.title }} – Flyer</title>
-  <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/flyer.css' | relative_url }}">
 </head>
 <body class="flyer-screen">
   <p class="flyer-download"><a href="{{ page.pdf | relative_url }}">{{ page.download_label }}</a></p>
   <div class="sheet">
     <main class="flyer-main">
-      <img class="flyer-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="systems42">
+      <img class="flyer-logo" src="{{ '/assets/img/logo-light.svg' | relative_url }}" alt="systems42">
       <p class="flyer-kicker">{{ course.kicker }}</p>
       <h1>{{ course.title }}</h1>
       <p class="flyer-sub">{{ course.subtitle }}</p>

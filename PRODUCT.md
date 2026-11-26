@@ -51,7 +51,7 @@ Seminar bookings and consulting requests are secondary. They follow from underst
 
 Open, not yet decided or not yet available:
 
-- The logo is a placeholder; the final logo is in progress.
+- The colour tokens still come from the placeholder logo; the helix logo has its own shades. Whether to align them is open.
 - Imprint and privacy pages say "Details to follow".
 - `/publications/` and `/examples/` have no real content yet. Examples will be published once results are solid.
 - `/get-started/` will become the user's guide at release.

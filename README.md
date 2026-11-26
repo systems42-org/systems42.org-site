@@ -26,7 +26,7 @@ The first `make dev` creates `Gemfile.lock` (via `make lock`) and builds the Doc
 | The 18 spec sections | `_data/sections.yml` |
 | Blog posts | `_posts/YYYY-MM-DD-slug.md`, layout `post`; `_drafts/` holds an example |
 | Search | `search.json` (built by Jekyll) + lunr.js in `assets/js/`; Cmd-K / Ctrl-K or the magnifier opens it; `/search/` shows all results |
-| Logo | `assets/img/logo.svg` (vector); PNG/ICO icons are generated from it. The link preview image `og-image.png` (1200x630: headline, the three loops, logo) is rendered by `npm run og-image` from `scripts/og-image.html` and `_includes/loops/*.svg`. **Placeholder, see Open points** |
+| Logo | The helix logo: `assets/img/logo.svg` (dark version, for the masthead and footer on `--ink`), `logo-light.svg` (for light backgrounds: flyer, link preview image), `favicon.svg` (light version, used on light and dark tab bars). The PNG/ICO icons (`logo-512.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` on white) are made from the finished logo files, not from the SVG here. The link preview image `og-image.png` (1200x630: headline, the three loops, logo) is rendered by `npm run og-image` from `scripts/og-image.html` and `_includes/loops/*.svg`. |
 | Pages | `_pages/*.md`, layout `page`, `permalink:` in the front matter; `toc:` adds the sub-navigation |
 | Colour and type tokens | `_sass/_tokens.scss` |
 | Docker setup | `docker/` (Dockerfile, compose.yml, entrypoint); driven by the `Makefile` |
@@ -48,7 +48,7 @@ The dev server (`make dev`) does not make the PDFs, so the PDF links give 404 th
 
 Things that are deliberately provisional. Check this list before the public release.
 
-- **The logo is a placeholder.** The final logo is still in progress. When it exists, replace `assets/img/logo.svg` and regenerate everything derived from it: `logo-512.png`, `favicon-32.png`, `favicon.ico`, and `apple-touch-icon.png`, then rerun `npm run og-image` (the link preview image for LinkedIn, Slack and similar shows the logo too) and bump `?v=` of its path in `_config.yml`, because LinkedIn caches the image by URL.
+- **The colour tokens come from the placeholder logo.** `--req-*` and `--arc-*` in `_sass/_tokens.scss` were sampled from the first logo; the helix logo has its own shades. Whether to align them is open. When the logo changes, replace the files listed under Logo, rerun `npm run og-image` and bump `?v=` of its path in `_config.yml`, because LinkedIn caches the image by URL.
 - **`/publications/` is set to `noindex` and is not in the sitemap**, because it has no content yet and search engines would treat it as a thin page. As soon as it has real content, remove `noindex: true` and `sitemap: false` from its front matter (`_pages/publications.md`). Otherwise it never shows up in search. `/imprint/`, `/privacy/` and `/search/` are also left out of the sitemap, but on purpose and for good.
 - **Imprint and privacy** still say "Details to follow".
 - **Structured data** (schema.org `Event` as JSON-LD, `_includes/event-jsonld.html`, fed by `_data/events.yml`) is in place on /training/ and the two seminar pages. Times and venue come from `events.yml` (`start_time`, `end_time`, `utc_offset`, `venue`); the offer carries only the regular `price_eur`, not the early-bird/alumni discount. Remember to set `utc_offset` to +02:00 for dates in summer time. Check after each change with Google's Rich Results Test.
