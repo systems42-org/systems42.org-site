@@ -5,6 +5,8 @@ primary:
     url: /idea/
   - title: Training
     url: /training/
+  - title: Consulting
+    url: /consulting/
   - title: Blog
     url: /blog/
   - title: About
@@ -13,9 +15,6 @@ more:
   - title: Get started
     url: /get-started/
     note: The user's guide, from the release in early 2027
-  - title: Consulting
-    url: /consulting/
-    note: In-house introduction and support
   - title: Publications
     url: /publications/
     note: Articles, talks and books

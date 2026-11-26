@@ -79,10 +79,13 @@
 .footer .wrap+.wrap{display:block;padding-block:0}
 .footer .copy{border-top:1px solid var(--ink-3);padding:16px 0 24px;font-size:.84rem}
 
-@media (max-width:860px){
+/* the header links collapse a little before the content breakpoint: five entries need ~900px */
+@media (max-width:900px){
   .nav{display:none}
   .primary-in-more{display:block}
   .kbd-hint{display:none}
+}
+@media (max-width:860px){
   .family-row{grid-template-columns:1fr}
   .footer .wrap{grid-template-columns:1fr 1fr}
 }
