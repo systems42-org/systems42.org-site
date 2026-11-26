@@ -19,6 +19,7 @@
 .search-results .r-type{font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);align-self:start;padding-top:3px}
 .search-results .r-snip{grid-column:1/-1;font-size:.9rem;color:var(--muted);line-height:1.4}
 .search-results mark{background:transparent;color:var(--fuse-700);font-weight:700}
+.search-results [aria-selected="true"] mark{color:var(--text)}
 .search-results .r-all a{display:block;text-align:center;font-weight:700;color:var(--arc-700);border-top:1px solid var(--line);border-radius:0 0 8px 8px;margin-top:4px}
 .search-results .r-all[aria-selected="true"] a{background:var(--arc-100)}
 .search-results .r-none{padding:14px 12px;color:var(--muted)}
